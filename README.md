@@ -1,1 +1,2 @@
 # startup
+notes.md
