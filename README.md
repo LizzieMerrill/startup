@@ -12,13 +12,30 @@ And the icing on the cake? Our cutting-edge aquascape simulator lets you unleash
 
 ### Design
 
-![Mock](voterMockUI.jpg)
+![Aquatics Page](aquatics_page.png)
 
-Here is a sequence diagram that shows how to people would interact with the backend to vote.
 
-![Voting sequence diagram](votingSequenceDiagram.png)
+Above is the live creatures section, and below is the equipment and tools section.
+
+
+![Hardware Page](hardware_page.png)
+
+
+Next, we have a product page where customers can buy products.
+
+
+![Product Page](product_page.png)
+
+
+Here is an FAQ page where fishkeepers can ask questions about the basics of fishkeeping.
+
+
+![FAQ Page](faq_page.png)
+
 
 ### Key Features
+
+
 
 ### Technologies
 
