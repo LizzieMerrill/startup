@@ -1,4 +1,4 @@
-# Aquari(.com)
+# Aquari
 
 ## Description Deliverable
 
