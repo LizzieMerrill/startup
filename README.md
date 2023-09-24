@@ -36,8 +36,35 @@ Here is an FAQ page where fishkeepers can ask questions about the basics of fish
 ### Key Features
 
 
+- Secure login over HTTPS
+- Users track their collection of fish tanks, which is stored in a database
+- Users can see others' collections and profiles, and message each other to form a sense of community
+- Users can make public posts and stream live videos of their collections
+- Users can do research into fish compatibility, breeding, diseases and medications, etc to assure their tanks are as healthy as can be
+- There will be an educational section for beginner fishkeepers
+- Users can purchase live and inanimate products for their fish tanks
+- Users can simulate fish tanks to see how they would look in the simulator
+
 
 ### Technologies
+
+
+I am going to use the required technologies in the following ways.
+
+- **HTML** - Uses correct HTML structure for application. Seven main HTML pages for the title screen, home screen, live products, inanimate products, product-specific/purchase screen, FAQ screen, and research directory. Hyperlinks to artifacts included for all selections.
+- **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
+- **JavaScript** - Provides login, purchasing functionality, forms the backbone of the design simulator, makes public posting functional, directs users to appropriate pages they click on, backend endpoint calls.
+- **Service** - Backend service with endpoints for:
+  - login
+  - retrieving messages from other fishkeepers
+  - recording new collection info to database
+  - displaying public posts
+  - calculating compatibility levels between fish
+- **DB** - Store users, and the data on their collections such as water parameters, fish health, names, species and quantities of each they own, etc.
+- **Login** - Register and login users. Credentials securely stored in database. Users who are not authenticated cannot log in, use the application or send messages to others' profiles
+- **WebSocket** - Displays messages and public posts in real time
+- **React** - Application ported to use the React web framework.
+
 
 ## HTML Deliverable
 
