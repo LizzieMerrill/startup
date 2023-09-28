@@ -17,6 +17,13 @@ IPv4 address for eth0: 172.31.90.208
 
 Command to ssh into server: 
 
+
+ssh -i ~/downloads/yellow56.pem ubuntu@aquariapp.com
+
+
+OR
+
+
 ssh -i ~/downloads/yellow56.pem ubuntu@54.174.64.86
 
 
