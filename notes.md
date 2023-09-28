@@ -4,7 +4,7 @@ aquariapp.com
 
 
 ## URL
-http://54.161.140.228/
+http://54.161.140.228/ OR http://aquariapp.com/
 
 
 
