@@ -1,8 +1,12 @@
 ### 9/27/23
 Public IPv4 address: 54.174.64.86
+
 ELASTIC IP: 54.161.140.228
+
 IPv4 address for eth0: 172.31.90.208
+
 Command to ssh into server: 
+
 ssh -i ~/downloads/yellow56.pem ubuntu@54.174.64.86
 
 
