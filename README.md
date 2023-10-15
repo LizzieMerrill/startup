@@ -67,7 +67,17 @@ I am going to use the required technologies in the following ways.
 
 
 ## HTML Deliverable
+For this deliverable I built out the structure of my application using HTML.
 
+HTML pages - There are currently 14 HTML pages that I have made the basic layout for that represent not only Aquari's multi-faceted functionality, but also educational and legal material for my brand.
+Links - On almost every page except the login and account creation pages there is a hamburger menu with links to all other pages, and a button to sign out, which takes the user back to the login page.
+Text - Each page has it's basic text, such as educational material on the FAQ
+page, the terms and conditions and privacy policy, and basic headers and titles for other pages as well.
+
+Images - I couldn't figure out how to include an image and so I didn't do this. 😔
+Login - Input box and submit button for login.
+Database - The voting choices represent data pulled from the database.
+WebSocket - The count of voting results represent the tally of realtime votes.
 ## CSS Deliverable
 
 ## JavaScript Deliverable
