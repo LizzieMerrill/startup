@@ -1,7 +1,6 @@
 header{
   background-color: #4f95ff;
   padding-top: 25px;
-  padding-bottom: 25px;
 }
 .logo{
   color: white;
@@ -15,7 +14,7 @@ main {
 .header-navbar {
   background-color: #4f95ff;
   overflow: hidden;
-  position: fixed;
+  position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -52,7 +51,6 @@ main {
 .navbar {
   background-color: #4f95ff;
   overflow: hidden;
-  position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
