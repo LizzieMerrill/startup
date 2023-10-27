@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -17,12 +16,25 @@
             <a href="beginners_faq.html">Tutorial</a>
             <a href="advanced_research.html">Research</a>
             <a href="simulator.html">Simulator</a>
+            <a href="sell.html">Sell</a>
             <a href="community_page.html" class="active">Community</a>
             <a href="index.html">Sign Out</a>
         </div>
     </header>
     <main>
-        <h1>COMING SOON!</h1>
+        <div class="name">
+            <fieldset id="name-controls">
+              <legend>My Name</legend>
+              <input id="my-name" type="text" />
+            </fieldset>
+          </div>
+      
+          <fieldset id="chat-controls" disabled><!--<fieldset id="chat-controls" disabled></fieldset> -->
+            <legend>Chat</legend>
+            <input id="new-msg" type="text" />
+            <button onclick="sendMessage()">Send</button>
+          </fieldset>
+          <div id="chat-text"></div>
     </main>
     <footer>
         <div class="navbar">
@@ -32,4 +44,5 @@
         </div>
     </footer>
 </body>
+<script src="script.js"></script>
 </html>

@@ -1,3 +1,11 @@
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  margin-top: auto;
+}
 header{
   background-color: #4f95ff;
   padding-top: 25px;
