@@ -1,6 +1,7 @@
 header{
   background-color: #4f95ff;
-  padding-top: 35px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .logo{
   color: white;
@@ -19,7 +20,7 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 25px;
   /* padding: 1rem 1.5rem; */
 }
 /* Style the links inside the navigation bar */
