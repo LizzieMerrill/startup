@@ -93,7 +93,7 @@ WebSocket - On the community page, there is a live chat function implemented wit
 ## CSS Deliverable
 For this deliverable I properly styled the application into its final appearance.
 
-Header, footer, and main content body on all applicable HTML pages are styled properly. The header and footer are styled the way they need to be on all pages. In terms of body styling, the home page is heavily styled to format the categories properly, while styling on other pages' body sections is minimal because the content on those pages is minimal so far. Every page has an appropriate background color (which I might change later to be easier on the eyes, despite how thematic it is).
+Header, footer, and main content body on all applicable HTML pages are styled properly (except the login, account creation and community pages! A few elements on those pages are not styled, but all proper styling is on all other pages). The header and footer are styled the way they need to be on all pages. In terms of body styling, the home page is heavily styled to format the categories properly, while styling on other pages' body sections is minimal because the content on those pages is minimal so far. Every page has an appropriate background color (which I might change later to be easier on the eyes, despite how thematic it is).
 
 Navigation elements - I dropped the underlines, changed text color, and made the navigation bar background have a nice blue color. Additionally, I made it so that all navigation items, whether in the header navbar or footer navbar, are spaced evenly and have some padding so the elements have some room to breathe aesthetically.
 
