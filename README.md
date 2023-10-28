@@ -69,15 +69,27 @@ I am going to use the required technologies in the following ways.
 ## HTML Deliverable
 For this deliverable I built out the structure of my application using HTML.
 
-HTML pages - There are currently 14 HTML pages that I have made the basic layout for that represent not only Aquari's multi-faceted functionality, but also educational and legal material for my brand.
-Links - On almost every page except the login and account creation pages there is a hamburger menu with links to all other pages, and a button to sign out, which takes the user back to the login page.
-Text - Each page has it's basic text, such as educational material on the FAQ
-page, the terms and conditions and privacy policy, and basic headers and titles for other pages as well.
+HTML pages - There are currently 13 HTML pages that I have made the basic layout for that represent not only Aquari's multi-faceted functionality, but also educational and legal material for my brand. Four of these pages accessible from the header navbar simply have "COMING SOON!" on them, as
+some facets of this project will be out of the scope of this semester. 
+Additionally, a couple of pages are not accessible from the website yet, 
+despite being in my development environment. This is intentional, I plan on using those pages later but for now they do not need to be graded.
 
-Images - I couldn't figure out how to include an image and so I didn't do this. 😔
-Login - Input box and submit button for login.
-Database - The voting choices represent data pulled from the database.
-WebSocket - The count of voting results represent the tally of realtime votes.
+Links - On most pages except the login, account creation, terms and conditions, and contact pages there is a navigation menu in the header with links to all other relevant pages, and a button to sign out, which takes the user back to the login page. There is also a footer with a couple of informational links about the website on the bottom.
+
+Text - Each page has it's basic text, whether that be "COMING SOON", the 
+navigation bars in the header and footer along with the logo in the header, the categories and their checkboxes and labels on the homepage (those are meant to be search filters for customers to filter what kind of products they want), the text on the terms and conditions and privacy policy page, and basic headers and titles for other pages as well.
+
+Images - I have two images so far on the research page, which are logo links to fish research databases. I plan on adding more images to the research and tutorial pages, and perhaps some other pages as well.
+
+Login - Input box and submit button for login on the index page, as well as an option to sign up which takes the user to an account creation page.
+
+Database - On the home page, there are many categories, all of which have many checkboxes underneath them. These are meant to be search filters for when the users are trying to find a product. Users can filter products by brand, live fish, food, decor, equipment for their tanks, chemicals for water maintenance, etc. They can also filter by categories such as size and type in some instances, such as when searching for a tank of the proper dimensions. When the user presses the search button on the bottom of the home page, all of the product filters they have selected will be applied, and the user will be taken to the browse products page where they can see the available products that match the description they are giving. 
+
+This is where the database factor comes in; when the filter checkboxes on the home page are clicked (which are only placeholders now), SQL calls will be run that filter all product listings stored in the database by their filter tag values, so that when the user clicks "Search" and is taken to the browsing page, only product listings relevant to them will be displayed. 
+
+Additionally, users' login info will be stored in the database in a separate section from the products as well, and by the end of the semester I'm hoping that user accounts will be fully functional and secure.
+
+WebSocket - On the community page, there is a live chat function implemented with WebSocket that allows users to ask each other questions and talk about their fish keeping pursuits.
 ## CSS Deliverable
 
 ## JavaScript Deliverable
