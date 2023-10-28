@@ -93,15 +93,15 @@ WebSocket - On the community page, there is a live chat function implemented wit
 ## CSS Deliverable
 For this deliverable I properly styled the application into its final appearance.
 
-Header, footer, and main content body on all applicable HTML pages are styled properly. Specifically, 
+Header, footer, and main content body on all applicable HTML pages are styled properly. The header and footer are styled the way they need to be on all pages. In terms of body styling, the home and community pages are heavily styled, while styling on other pages' body sections is minimal because the content on those pages is minimal so far.
 
 Navigation elements - I dropped the underlines, changed text color, and made the navigation bar background have a nice blue color. Additionally, I made it so that all navigation items, whether in the header navbar or footer navbar, are spaced evenly and have some padding so the elements have some room to breathe aesthetically.
 
-Responsive to window resizing - My app looks great on most window sizes and devices, as the navigation bars in both the header and footer stretch and condense to match window resizing, to a point. However, if this app is opened on a phone, the nav bars hit a point where they cannot condense anymore due to something along the lines of my padding being set in pixels and not a percentage of the screen (I think?). So if someone opens my website on their phone, they might have a bit of trouble. 
+Responsive to window resizing - My app looks great on most window sizes and devices, as the navigation bars in both the header and footer stretch and condense to match window resizing, to a point. However, if this app is opened on a phone, the nav bars hit a point where they cannot condense anymore due to something along the lines of my padding being set in pixels and not a percentage of the screen (I think?). So if someone opens my website on their phone, they can't click on the home page or collection links in the header nav bar. Besides that, all works fine.
 
 Application elements - Used good contrast and whitespace
 
-Application text content - Consistent fonts
+Application text content - All text consistently uses the Roboto google font as imported in my CSS file, style.css.
 
 Application images - On the research page, I styled the third-party aquarium database logo images to look like buttons by putting grey borders around them that have rounded corners, like most rectagular buttons do. I also made it so that each image is 100 pixels tall, with the width of the image being set to auto, which allows the computer to set the width in such a way that the image is not being pushed in or stretched out beyond its original aspect ratio.
 ## JavaScript Deliverable

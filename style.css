@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 body{
   min-height: 100vh;
   display: flex;
@@ -29,21 +31,22 @@ main {
 img:hover {
   cursor: pointer;
 }
-    /* Place the footer navbar at the bottom of the page, and make it stick */
+/* Header nav bar */
 .header-navbar {
+  float: left;
   background-color: #4f95ff;
-  overflow: hidden;
+  overflow: auto;
   position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: left;
   padding-top: 25px;
   /* padding: 1rem 1.5rem; */
 }
 /* Style the links inside the navigation bar */
 .header-navbar a {
-  /* float: left; */
+  float: left;
   display: flex;
   color: #f2f2f2;
   text-align: center;
@@ -65,7 +68,37 @@ img:hover {
   background-color: #74dcff;
   color: white;
 }
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+/* @media (max-width: 785px) {
+/* Header nav bar 
+.header-navbar {
+  float: left;
+  background-color: #4f95ff;
+  overflow: auto;
+  position: sticky;
+  width: auto;
+  max-width: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: left;
+  padding-top: 25px;
+  /* padding: 1rem 1.5rem; 
+}
+/* Style the links inside the navigation bar 
+.header-navbar a {
+  float: left;
+  display: flex;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px; 
+  text-decoration: none;
+  justify-content: space-evenly;
+  font-size: 17px;
+  flex: auto;
+  width: auto;
+  max-width: none;
+}
+} */
+
 
   /* Place the footer navbar at the bottom of the page, and make it stick */
 .navbar {
