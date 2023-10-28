@@ -91,7 +91,19 @@ Additionally, users' login info will be stored in the database in a separate sec
 
 WebSocket - On the community page, there is a live chat function implemented with WebSocket that allows users to ask each other questions and talk about their fish keeping pursuits.
 ## CSS Deliverable
+For this deliverable I properly styled the application into its final appearance.
 
+Header, footer, and main content body on all applicable HTML pages are styled properly. Specifically, 
+
+Navigation elements - I dropped the underlines, changed text color, and made the navigation bar background have a nice blue color. Additionally, I made it so that all navigation items, whether in the header navbar or footer navbar, are spaced evenly and have some padding so the elements have some room to breathe aesthetically.
+
+Responsive to window resizing - My app looks great on most window sizes and devices, as the navigation bars in both the header and footer stretch and condense to match window resizing, to a point. However, if this app is opened on a phone, the nav bars hit a point where they cannot condense anymore due to something along the lines of my padding being set in pixels and not a percentage of the screen (I think?). So if someone opens my website on their phone, they might have a bit of trouble. 
+
+Application elements - Used good contrast and whitespace
+
+Application text content - Consistent fonts
+
+Application images - On the research page, I styled the third-party aquarium database logo images to look like buttons by putting grey borders around them that have rounded corners, like most rectagular buttons do. I also made it so that each image is 100 pixels tall, with the width of the image being set to auto, which allows the computer to set the width in such a way that the image is not being pushed in or stretched out beyond its original aspect ratio.
 ## JavaScript Deliverable
 
 ## Service Deliverable

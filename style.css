@@ -43,12 +43,13 @@ img:hover {
 }
 /* Style the links inside the navigation bar */
 .header-navbar a {
-  float: left;
-  display: block;
+  /* float: left; */
+  display: flex;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 16px; 
   text-decoration: none;
+  justify-content: space-evenly;
   font-size: 17px;
   flex: auto;
 }

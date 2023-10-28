@@ -7,6 +7,11 @@ aquariapp.com
 http://54.161.140.228/ OR http://aquariapp.com/ OR http://*.aquariapp.com/, where * is any viable text
 
 
+
+### 10/27/23: Simon CSS
+I was able to get Simon CSS deployed to production. I learned that the console can be very difficult if you do not know which directory you are in AGAIN. I am afraid I did my simon HTML wrong, so I'll have to check that.
+
+
 ### 10/3/23: Simon HTML
 I was able to get Simon HTML into my VS code and started on my project. I learned that the console can be very difficult if you do not know which directory you are in.
 
