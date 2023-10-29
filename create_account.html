@@ -13,13 +13,16 @@
         <hr>
     
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input id="signup-email" type="text" placeholder="Enter Email" name="email" required>
     
+        <label for="signup-username"><b>Username</b></label>
+        <input id="signup-username" type="text" placeholder="Enter Username" name="signup-username" required>
+
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input id="signup-password" type="password" placeholder="Enter Password" name="psw" required>
     
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <input id="signup-password-confirmation" type="password" placeholder="Repeat Password" name="psw-repeat" required>
     
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -29,7 +32,7 @@
     
         <div class="clearfix">
           <button type="button" class="cancelbtn" onclick="location.href='index.html'">Cancel</button>
-          <button type="submit" class="signupbtn" onclick="location.href='home_page.html'">Sign Up</button>
+          <button type="submit" class="signupbtn" onclick="signUp()">Sign Up</button>
         </div>
       </div>
       <footer>

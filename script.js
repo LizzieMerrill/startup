@@ -1,3 +1,92 @@
+//LOGIN
+
+function login() {
+  const userN = document.querySelector("#login-username");
+  localStorage.setItem("userName", userN.value);
+  const userP = document.querySelector("#login-password");
+  localStorage.setItem("userPass", userP.value);
+  //if(insert authentication logic == valid) {
+  window.location.href = "home_page.html";
+  //}
+  //else{attempt failed, try again}
+}
+
+//SIGN UP
+
+function signUp() {
+  //if(check if user info is not already taken){
+    const newUserE = document.querySelector("#signup-email");
+  localStorage.setItem("newUserEmail", newUserE.value);
+  const newUserN = document.querySelector("#signup-username");
+  localStorage.setItem("newUserName", newUserN.value);
+  if(document.querySelector("#signup-password").textContent == document.querySelector("#signup-password-confirmation").textContent){
+  const newUserP = document.querySelector("#signup-password");
+  localStorage.setItem("newUserPass", newUserP.value);
+  }
+  else{
+    //return false and tell user to try again due to password mismatch (USE WEBSOCKET TO CHECK IN REALTIME WHETHER PASSWORDS MATCH??)
+  }
+  //if(insert authentication logic == valid) {
+  window.location.href = "home_page.html";
+  //}
+  //else{attempt failed, try again}
+//}
+}
+
+//POST PRODUCT LISTING
+function productPost(){
+  const saleT = document.querySelector("#sale-title");
+  localStorage.setItem("saleTitle", saleT.value);
+  const saleDesc = document.querySelector("#sale-description");
+  localStorage.setItem("saleDescription", saleDesc.value);
+  const saleM = document.querySelector("#sale-materials");
+  localStorage.setItem("saleMaterials", saleM.value);
+  const saleC = document.querySelector("#sale-colors");
+  localStorage.setItem("saleColors", saleC.value);
+  const saleDim = document.querySelector("#sale-dimensions");
+  localStorage.setItem("saleDimensions", saleDim.value);
+
+  //if(sale listing == valid) {
+    window.location.href = "product_page.html";
+    //}
+    //else{attempt failed, try again}
+}
+
+
+//ADD NEW TANK TO COLLECTION
+function addToCollection(){
+  const collectionTankS = document.querySelector("#collection-tank-size-input");
+  localStorage.setItem("collectionTankSize", collectionTankS.value);
+  const collectionTankU = document.querySelector("#collection-tank-units-input");
+  localStorage.setItem("collectionTankUnits", collectionTankU.value);
+  const collectionTankDim = document.querySelector("#collection-tank-dimensions-input");
+  localStorage.setItem("collectionTankDimensions", collectionTankDim.value);
+  const collectionTankNF = document.querySelector("#collection-tank-num-fish-input");
+  localStorage.setItem("collectionTankNumFish", collectionTankNF.value);
+  const collectionTankDesc = document.querySelector("#collection-tank-description-input");
+  localStorage.setItem("collectionTankDescription", collectionTankDesc.value);
+
+  //if(sale listing == valid) {
+
+
+
+    document.alert("Tell the community about your new tank! :)");
+    //add tank to collection through database, and display collection list
+    //}
+    //else{attempt failed, try again}
+}
+
+
+
+
+
+
+
+
+
+
+// CHAT
+
 const chatControls = document.querySelector('#chat-controls');
 const myName = document.querySelector('#my-name');
 myName.addEventListener('keyup', (e) => {
