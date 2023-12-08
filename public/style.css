@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  margin-top: auto;
+}
+header{
+  background-color: #4f95ff;
+  padding-top: 20px;
+}
+.logo{
+  color: white;
+  width: 100%;
+  font-size: 700%;
+  font-family: Agbalumo;
+}
+main {
+  padding: 30px;
+}
+
+h1{
+  color:#f2f2f2;
+}
+
+input checked {
+  /* ??? do javascript for this? */
+}
+
+.research-body{
+  background-color: white;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: row;
+  align-items: normal; /* Use 'center' to vertically align items */
+}
+
+.product-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: inline;
+  padding: 0 10px;
+  padding-bottom: 40px;
+  text-align: left; /* Center-align the text in the product-category */
+}
+
+.product-category h2{
+  font-size: x-large;
+  color:#f2f2f2;
+}
+
+.product-category label{
+  font-size: large;
+  color:#f2f2f2;
+  cursor: pointer;
+}
+
+.product-category input{
+  cursor: pointer;
+  border: none;
+}
+
+.search-btn{
+  color:#f2f2f2;
+  font-size: x-large;
+  background-color: #4f95ff;
+  border-radius: 4px;
+  border-width: 0px;
+  padding: 30px;
+  cursor: pointer;
+}
+
+.research-link {
+  max-width: 100%;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: auto;
+}
+img:hover {
+  cursor: pointer;
+}
+/* Header nav bar */
+.header-navbar {
+  float: left;
+  background-color: #4f95ff;
+  overflow: auto;
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: left;
+  padding-top: 20px;
+  /* padding: 1rem 1.5rem; */
+}
+/* Style the links inside the navigation bar */
+.header-navbar a {
+  float: left;
+  display: flex;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px; 
+  text-decoration: none;
+  justify-content: space-evenly;
+  font-size: 17px;
+  flex: auto;
+}
+
+/* Change the color of links on hover */
+.header-navbar a:hover {
+  background-color: #74dcff;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.header-navbar a.active {
+  background-color: #74dcff;
+  color: white;
+}
+
+
+@media (max-width: 790px) {
+  .header-navbar {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+  }
+
+  .header-navbar a {
+    margin: 5px 0;
+  }
+}
+
+
+
+  /* Place the footer navbar at the bottom of the page, and make it stick */
+.navbar {
+  background-color: #4f95ff;
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* padding: 1rem 1.5rem; */
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  flex: auto;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #74dcff;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #74dcff;
+  color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    background-color:#74dcff;
+}
