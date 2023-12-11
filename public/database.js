@@ -1,83 +1,4 @@
 const { MongoClient } = require('mongodb');
-
-const data = require('./<dataFileName>.js');
-
-const config = require('./dbConfig.json');
-const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
-
-
-async function main(){
-const client = new MongoClient(url);
-
-const collection = client.db('rental').collection('house');
-
-const house = {
-  name: 'Beachfront views',
-  summary: 'From your bedroom to the beach, no shoes required',
-  property_type: 'Condo',
-  beds: 1,
-};
-await collection.insertOne(house);
-
-const cursor = collection.find();
-const rentals = await cursor.toArray();
-rentals.forEach((i) => console.log(i));
-
-//OUTPUT
-// [
-//     {
-//       _id: new ObjectId('639a96398f8de594e198fc13'),
-//       name: 'Beachfront views',
-//       summary: 'From your bedroom to the beach, no shoes required',
-//       property_type: 'Condo',
-//       beds: 1,
-//     },
-//   ];
-
-
-const query = { property_type: 'Condo', beds: { $lt: 2 } };
-
-const options = {
-  sort: { price: -1 },
-  limit: 10,
-};
-}
-main().catch(console.error);
-
-
-//mongodb+srv://cs260:<password>@cluster0.qnizji0.mongodb.net/?retryWrites=true&w=majority
-
-
-
-
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-// const uri = "mongodb+srv://cs260:<password>@cluster0.qnizji0.mongodb.net/?retryWrites=true&w=majority";
-// // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-// const client = new MongoClient(uri, {
-//   serverApi: {
-//     version: ServerApiVersion.v1,
-//     strict: true,
-//     deprecationErrors: true,
-//   }
-// });
-// async function run() {
-//   try {
-//     // Connect the client to the server	(optional starting in v4.7)
-//     await client.connect();
-//     // Send a ping to confirm a successful connection
-//     await client.db("admin").command({ ping: 1 });
-//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
-
-
-
-/*
-const { MongoClient } = require('mongodb');
 const config = require('./dbConfig.json');
 
 async function main() {
@@ -120,5 +41,31 @@ async function main() {
 main().catch(console.error);
 
 
+//mongodb+srv://cs260:<password>@cluster0.qnizji0.mongodb.net/?retryWrites=true&w=majority
 
-*/
+
+
+
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://cs260:<password>@cluster0.qnizji0.mongodb.net/?retryWrites=true&w=majority";
+// // Create a MongoClient with a MongoClientOptions object to set the Stable API version
+// const client = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   }
+// });
+// async function run() {
+//   try {
+//     // Connect the client to the server	(optional starting in v4.7)
+//     await client.connect();
+//     // Send a ping to confirm a successful connection
+//     await client.db("admin").command({ ping: 1 });
+//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+//   } finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
