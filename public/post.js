@@ -7,7 +7,7 @@ async function loadPost() {
   
     const tableBodyEl = document.querySelector('#post-table');
   
-    //if (post.length) {
+    if (post.length) {
       for (const [i, postStuff] of post.entries()) {
         const positionTdEl = document.createElement('td');
         const nameTdEl = document.createElement('td');
@@ -27,9 +27,9 @@ async function loadPost() {
   
         tableBodyEl.appendChild(rowEl);
       }
-    // } else {
-    //   tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to post something!</td></tr>';
-    // }
+    } else {
+      tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to post something!</td></tr>';
+    }
   }
   
   loadPost();
@@ -52,15 +52,15 @@ function contentPost(){
     
 
     let postStuff = {
-        number: postNum,
-        name: posterN,
-        post: postT,
-        date: postD
-    }
-  
+      number: postNum.value,
+      name: posterN.value,
+      post: postT.value,
+      date: postD.value
+  }
     //if(sale listing == valid) {
-      window.location.href = "post_view.html";
+      
       //}
       //else{attempt failed, try again}
-      loadPost()
+      //loadPost()
+      window.location.href = "post_view.html";
   }

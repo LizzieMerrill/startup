@@ -115,7 +115,17 @@ WebSocket - I laid out the JavaScript functionality for the chat on the communit
 
 application logic - Began making log in and sign up logic, as well as logic for the sell page/for when customers are creating a new product listing. Also made the skeleton of the collection page, and a function to go with it that takes data the user provided on a new fish tank they got and added to their collection, adds the new tank to their collection list (which will be displayed to them using SQL calls as well), and displays a popup alert at the top of the page asking the user to tell the community bout their new tank on the community page.
 ## Service Deliverable
+For this deliverable I added backend endpoints that receives input text for a post and returns the post in a neat table row format.
 
+Node.js/Express HTTP service - done on post_view.html and post.js
+
+Static middleware for frontend - done on post_view.html and post.js
+
+Calls to third party endpoints - done on post_view.html and post.js
+
+Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for posting. Post info is meant to be stored on the table on the post_view.html page, task done on post_view.html and post.js
+
+Frontend calls service endpoints - I tried to do this using the contentPost() function, but it doesn't seem to be working on the front end.
 ## Database Deliverable
 
 ## Authentication Deliverable
