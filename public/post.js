@@ -1,6 +1,6 @@
 //let i = 0;//modify when doing database
 async function loadPost() {
-    const response = await fetch("/api/post")
+    const response = await fetch("/api/getpost")
     const post = await response.json()
   
     // Modify the DOM to display the scores
@@ -40,7 +40,7 @@ async function loadPost() {
 
 
 //POST PRODUCT LISTING
-function contentPost(){
+async function contentPost(){
     const postNum = document.querySelector("#post-number");
     localStorage.setItem("postNumber", postNum.value);
     const posterN = document.querySelector("#poster-name");
@@ -62,5 +62,49 @@ function contentPost(){
       //}
       //else{attempt failed, try again}
       //loadPost()
-      window.location.href = "post_view.html";
+
+      try {
+        const response = await fetch('/api/setpost', {
+          method: 'POST',
+          headers: {'content-type': 'application/json'},
+          body: JSON.stringify(postStuff),
+        });
+  
+        // Store what the service gave us as the high scores
+        const posts = await response.json();
+        localStorage.setItem('posts', JSON.stringify(posts));
+      } catch {
+        // If there was an error then just log it onto the console
+        console.log('We could not post your content, try again!');
+      }
+
+
+      loadPost()
+      //window.location.href = "post_view.html";
   }
+
+
+  // try {
+  //   const response = await fetch('/api/setpost', {
+  //     method: 'POST',
+  //     headers: {'content-type': 'application/json'},
+  //     body: JSON.stringify(postStuff),
+  //   });
+
+  //   // Store what the service gave us as the high scores
+  //   const posts = await response.json();
+  //   localStorage.setItem('posts', JSON.stringify(posts));
+  // } catch {
+  //   // If there was an error then just log it onto the console
+  //   console.log('We could not post your content, try again!');
+  // }
+
+
+const url = "https://api.chucknorris.io/jokes/random";
+fetch(url)
+  .then((x) => x.json())
+  .then((response) => {
+    document.querySelector("pre").textContent = JSON.stringify(
+      response.value
+    );
+  });

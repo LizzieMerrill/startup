@@ -18,15 +18,15 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
+// GetPosts
+apiRouter.get('/getpost', (_req, res) => {
+  res.send(post);
 });
 
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
+// SubmitPost
+apiRouter.post('/setpost', (req, res) => {
+  post = updatePosts(req.body);
+  res.send(true);
 });
 
 // Return the application's default page if the path is unknown
@@ -37,6 +37,48 @@ app.use((_req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+
+let postArr = [];
+function updatePosts(newPost) {
+  postArr.push(newPost);
+  
+  //1
+
+  return postArr;
+}
+
+
+
+
+
+
+
+
+//1:
+
+
+  // let found = false;
+  // for (const [i, prevPost] of posts.entries()) {
+  //   if (newPost.post > prevPost.post) {
+  //     posts.splice(i, 0, newPost);
+  //     found = true;
+  //     break;
+  //   }
+  // }
+
+  // if (!found) {
+  //   posts.push(newPost);
+  // }
+
+  // if (posts.length > 10) {
+  //   posts.length = 10;
+  // }
+
+
+
+
+  //2:
 
 // const express = require('express');
 // const path = require('path');

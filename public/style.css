@@ -219,3 +219,7 @@ th{
   align-items: center;
   text-align: left; /* Center-align the text in the product-category */
 }
+
+pre {
+  font-size: 2em;
+}

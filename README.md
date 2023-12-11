@@ -115,21 +115,52 @@ WebSocket - I laid out the JavaScript functionality for the chat on the communit
 
 application logic - Began making log in and sign up logic, as well as logic for the sell page/for when customers are creating a new product listing. Also made the skeleton of the collection page, and a function to go with it that takes data the user provided on a new fish tank they got and added to their collection, adds the new tank to their collection list (which will be displayed to them using SQL calls as well), and displays a popup alert at the top of the page asking the user to tell the community bout their new tank on the community page.
 ## Service Deliverable
-For this deliverable I added backend endpoints that receives input text for a post and returns the post in a neat table row format.
+For this deliverable I added backend endpoints that receives input text for a post and returns the post in a neat table row format. I worked with index.js, public/post.js, and public/post_view.html
 
-Node.js/Express HTTP service - done on post_view.html and post.js
+Node.js/Express HTTP service - done
 
-Static middleware for frontend - done on post_view.html and post.js
+Static middleware for frontend - done
 
-Calls to third party endpoints - done on post_view.html and post.js
+Calls to third party endpoints - done at the very bottom of the post.js file, I did a third party call to a chuck norris joke generator on my website. This is displayed on the post_view.html page, above the post button.
 
-Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for posting. Post info is meant to be stored on the table on the post_view.html page, task done on post_view.html and post.js
+Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for posting. Post info is stored on the table on the post_view.html page.
 
-Frontend calls service endpoints - I tried to do this using the contentPost() function, but it doesn't seem to be working on the front end.
+Frontend calls service endpoints - I did this using the try/catch things in my post.js file, along with the functions in there, to update the table on the front end with server-stored info.
 ## Database Deliverable
+For this deliverable I stored all user posts from the post page in the database.
 
+MongoDB Atlas database created - done!
+
+Endpoints for data - My stubbed out endpoints now process the data and send it to Mongo.
+
+Stores data in MongoDB - done!
 ## Authentication Deliverable
+For this deliverable I associate the votes with the logged in user.
 
+User registration - Creates a new account in the database.
+
+existing user - Stores the votes under the same user if the user already exists.
+
+Use MongoDB to store credentials - Stores both user and their votes.
+
+Restricts functionality - You cannot vote until you have logged in. This is restricted on the frontend only. 😔
 ## WebSocket Deliverable
+For this deliverable I used webSocket to update the chat on the frontend community page in realtime.
 
+Backend listens for WebSocket connection - done!
+
+Frontend makes WebSocket connection - done!
+
+Data sent over WebSocket connection - done!
+
+WebSocket data displayed - All user chats display in realtime.
 ## React Deliverable
+For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
+
+Bundled and transpiled - done!
+
+Components - Login, voting list, vote are all components.
+
+Router - Routing between login and voting components.
+
+Hooks - Vue uses class properties instead of UseState to track changes in vote state.
