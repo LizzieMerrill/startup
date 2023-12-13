@@ -22,7 +22,7 @@ async function login() {
 
   try {
     const response = await fetch('/api/getusers', {
-      method: 'GET',
+      method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(userName),
     });
@@ -32,7 +32,7 @@ async function login() {
     localStorage.setItem('users', JSON.stringify(users));
   } catch {
     // If there was an error then just log it onto the console
-    console.log('We could not post your content, try again!');
+    console.log('Login attempt failed, try again!');
   }
 
 
@@ -49,7 +49,7 @@ async function login() {
 
 //SIGN UP
 
-function signUp() {
+async function signUp() {
   //if(check if user info is not already taken){
     const newUserE = document.querySelector("#signup-email");
   localStorage.setItem("newUserEmail", newUserE.value);
@@ -58,6 +58,24 @@ function signUp() {
   if(document.querySelector("#signup-password").textContent == document.querySelector("#signup-password-confirmation").textContent){
   const newUserP = document.querySelector("#signup-password");
   localStorage.setItem("newUserPass", newUserP.value);
+
+
+  try {
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(userName),
+    });
+
+    // Store what the service gave us as the high scores
+    const users = await response.json();
+    localStorage.setItem('users', JSON.stringify(users));
+  } catch {
+    // If there was an error then just log it onto the console
+    console.log('Login attempt failed, try again!');
+  }
+
+
   return 0;
   }
   return 1;

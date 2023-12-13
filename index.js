@@ -27,9 +27,11 @@ apiRouter.get('/getusers', (_req, res) => {
   res.send(post);
 });
 // SignUp
-apiRouter.post('/setpost', (req, res) => {
-  post = updatePosts(req.body);
-  res.send(true);
+apiRouter.post('/signup', (req, res) => {
+  if(DB.usernames.find({newUserN$exists: true})){//???????????????????????
+    post = signUp(req.body);
+    res.send(true);
+  }
 });
 
 // GetPosts
