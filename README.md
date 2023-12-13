@@ -139,9 +139,9 @@ For this deliverable I associate posts and general functionality with the logged
 
 User registration - Creates a new account in the database.
 
-existing user - Stores data such as posts under the same user if the user already exists.
+existing user - Stores data such as posts under the same user if the user already exists, as well as giving the current user an authorization token/cookie.
 
-Use MongoDB to store credentials - Stores both user credentials and their posts.
+Use MongoDB to store credentials - Stores both user credentials and (hopefully) their posts.
 
 Restricts functionality - You cannot access most pages on the site (besides the terms and conditions, contact info and login pages) if you are not logged in. This is because buying, selling, posts and chats are not meant to be anonymous, so that any behavior that violates the terms and conditions can result in disciplinary action up to banning of that user, thus enforcing the terms of appropriate usage and behavior on the site. Banning will not be implemented this semester, but that is one of the points to restricting people without accounts.
 ## WebSocket Deliverable
