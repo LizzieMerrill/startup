@@ -21,15 +21,25 @@ async function login() {
   localStorage.setItem("userPass", userP.value);
 
   try {
-    const response = await fetch('/auth/login', {
+    const response = await fetch('/api/auth/login', {//??????????????????????
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(userName),
     });
 
-    // Store what the service gave us as the high scores
+    // Store what the service gave us as the user
     const users = await response.json();
     localStorage.setItem('users', JSON.stringify(users));
+
+    if (response.ok) {
+      window.location.href = 'home_page.html';
+    } else {
+      const body = await response.json();
+      const modalEl = document.querySelector('#msgModal');
+      modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+      const msgModal = new bootstrap.Modal(modalEl, {});
+      msgModal.show();
+    }
   } catch {
     // If there was an error then just log it onto the console
     console.log('Login attempt failed, try again!');
@@ -47,6 +57,26 @@ async function login() {
   // }
 }
 
+
+
+
+//LOG OUT
+function logout() {
+  if(localStorage.getItem('userName') != null){//log out if its a previously existing user
+    localStorage.removeItem('userName');
+  }
+  if(localStorage.getItem('newUserName') != null){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
+    localStorage.removeItem('newUserName');
+  }
+  fetch(`/api/auth/logout`, {
+    method: 'delete',
+  }).then(() => (window.location.href = 'index.html'));
+}
+
+
+
+
+
 //SIGN UP
 
 async function signUp() {
@@ -61,7 +91,7 @@ async function signUp() {
 
 
   try {
-    const response = await fetch('/auth/create', {
+    const response = await fetch('/api/auth/create', {//?????????????????
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(newUserE, newUserN, newUserP),
@@ -70,6 +100,16 @@ async function signUp() {
     // Store what the service gave us as the high scores
     const users = await response.json();
     localStorage.setItem('users', JSON.stringify(users));
+
+    if (response.ok) {
+      window.location.href = 'home_page.html';
+    } else {
+      const body = await response.json();
+      const modalEl = document.querySelector('#msgModal');
+      modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+      const msgModal = new bootstrap.Modal(modalEl, {});
+      msgModal.show();
+    }
   } catch {
     // If there was an error then just log it onto the console
     console.log('Sign up attempt failed, try again!');
