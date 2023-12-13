@@ -1,4 +1,6 @@
 const { MongoClient } = require('mongodb');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 const config = require('./dbConfig.json');
 
 
@@ -268,4 +270,27 @@ function getPosts(){
     return cursor.toArray();
 }
 
-module.exports = { updatePosts, getPosts };
+function getUser(userName) {
+  return collectionUsernames.findOne({ username: userName });
+}
+
+function getUserByToken(token) {
+  return collectionUsernames.findOne({ token: token });
+}
+
+async function createUser(email, username, password) {
+  // Hash the password before we insert it into the database
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const person = {
+    email: email,
+    username: username,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await collectionUsernames.insertOne(person);
+
+  return user;
+}
+
+module.exports = { updatePosts, getPosts, getUser, getUserByToken, createUser };

@@ -21,7 +21,7 @@ async function login() {
   localStorage.setItem("userPass", userP.value);
 
   try {
-    const response = await fetch('/api/getusers', {
+    const response = await fetch('/auth/login', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(userName),
@@ -61,10 +61,10 @@ async function signUp() {
 
 
   try {
-    const response = await fetch('/api/signup', {
+    const response = await fetch('/auth/create', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
-      body: JSON.stringify(userName),
+      body: JSON.stringify(newUserE, newUserN, newUserP),
     });
 
     // Store what the service gave us as the high scores
@@ -72,7 +72,7 @@ async function signUp() {
     localStorage.setItem('users', JSON.stringify(users));
   } catch {
     // If there was an error then just log it onto the console
-    console.log('Login attempt failed, try again!');
+    console.log('Sign up attempt failed, try again!');
   }
 
 
