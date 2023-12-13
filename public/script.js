@@ -1,14 +1,50 @@
 //LOGIN
 
-function login() {
+
+
+const url = "https://api.chucknorris.io/jokes/random";
+fetch(url)
+  .then((x) => x.json())
+  .then((response) => {
+    document.querySelector("pre").textContent = JSON.stringify(
+      response.value
+    );
+  });
+
+
+
+
+async function login() {
   const userN = document.querySelector("#login-username");
   localStorage.setItem("userName", userN.value);
   const userP = document.querySelector("#login-password");
   localStorage.setItem("userPass", userP.value);
-  //if(insert authentication logic == valid) {
-  window.location.href = "home_page.html";
-  //}
-  //else{attempt failed, try again}
+
+  try {
+    const response = await fetch('/api/getusers', {
+      method: 'GET',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(userName),
+    });
+
+    // Store what the service gave us as the high scores
+    const users = await response.json();
+    localStorage.setItem('users', JSON.stringify(users));
+  } catch {
+    // If there was an error then just log it onto the console
+    console.log('We could not post your content, try again!');
+  }
+
+
+  // //if(insert authentication logic == valid) {
+  //   if(send){
+  //     window.location.href = "home_page.html";
+  //   }
+  // //}
+  // //else{attempt failed, try again}
+  // else{
+  //   document.querySelector("log-in-text").textContent = "Login attempt failed, try again."
+  // }
 }
 
 //SIGN UP
@@ -22,19 +58,24 @@ function signUp() {
   if(document.querySelector("#signup-password").textContent == document.querySelector("#signup-password-confirmation").textContent){
   const newUserP = document.querySelector("#signup-password");
   localStorage.setItem("newUserPass", newUserP.value);
+  return 0;
   }
-  else{
-    //return false and tell user to try again due to password mismatch (USE WEBSOCKET TO CHECK IN REALTIME WHETHER PASSWORDS MATCH??)
-  }
-  //if(insert authentication logic == valid) {
-  window.location.href = "home_page.html";
+  return 1;
+  // else{
+  //   //return false and tell user to try again due to password mismatch (USE WEBSOCKET TO CHECK IN REALTIME WHETHER PASSWORDS MATCH??)
+  // }
+  // //if(insert authentication logic == valid) {
+  // window.location.href = "home_page.html";
   //}
   //else{attempt failed, try again}
 //}
 }
 
+
+
+
 //POST PRODUCT LISTING
-function productPost(){
+function sell(){
   const saleT = document.querySelector("#sale-title");
   localStorage.setItem("saleTitle", saleT.value);
   const saleDesc = document.querySelector("#sale-description");
@@ -75,6 +116,13 @@ function addToCollection(){
     //}
     //else{attempt failed, try again}
 }
+
+
+
+
+
+
+
 
 
 
@@ -145,6 +193,7 @@ socket.onmessage = async (event) => {
 
   const { WebSocketServer } = require('ws');
 const express = require('express');
+const { Db } = require('mongodb');
 const app = express();
 
 // Serve up our webSocket client HTML

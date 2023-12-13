@@ -135,15 +135,15 @@ Endpoints for data - My stubbed out endpoints now process the data and send it t
 
 Stores data in MongoDB - done!
 ## Authentication Deliverable
-For this deliverable I associate the votes with the logged in user.
+For this deliverable I associate posts and general functionality with the logged in user.
 
 User registration - Creates a new account in the database.
 
-existing user - Stores the votes under the same user if the user already exists.
+existing user - Stores data such as posts under the same user if the user already exists.
 
-Use MongoDB to store credentials - Stores both user and their votes.
+Use MongoDB to store credentials - Stores both user credentials and their posts.
 
-Restricts functionality - You cannot vote until you have logged in. This is restricted on the frontend only. 😔
+Restricts functionality - You cannot access most pages on the site (besides the terms and conditions, contact info and login pages) if you are not logged in. This is because buying, selling, posts and chats are not meant to be anonymous, so that any behavior that violates the terms and conditions can result in disciplinary action up to banning of that user, thus enforcing the terms of appropriate usage and behavior on the site. Banning will not be implemented this semester, but that is one of the points to restricting people without accounts.
 ## WebSocket Deliverable
 For this deliverable I used webSocket to update the chat on the frontend community page in realtime.
 

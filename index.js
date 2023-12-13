@@ -18,6 +18,20 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+
+
+
+
+// GetUsers
+apiRouter.get('/getusers', (_req, res) => {
+  res.send(post);
+});
+// SignUp
+apiRouter.post('/setpost', (req, res) => {
+  post = updatePosts(req.body);
+  res.send(true);
+});
+
 // GetPosts
 apiRouter.get('/getpost', (_req, res) => {
   res.send(post);
