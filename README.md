@@ -127,11 +127,11 @@ Backend service endpoints - Placeholders for login that stores the current user 
 
 Frontend calls service endpoints - I did this using the try/catch things in my post.js file, along with the functions in there, to update the table on the front end with server-stored info.
 ## Database Deliverable
-For this deliverable I stored all user posts from the post page in the database.
+For this deliverable I stored all user posts from the post page in the database, and wrote code to retrieve all posts from the database as well.
 
 MongoDB Atlas database created - account and database cluster both created, information put into dbConfig.json for convenience.
 
-Endpoints for data - My stubbed out endpoints now process the data and send it to Mongo. 
+Endpoints for data - My stubbed out endpoints now process user post data and send it to Mongo. I also made endpoints to load the posts from the database.
 
 Stores data in MongoDB - done!
 ## Authentication Deliverable
