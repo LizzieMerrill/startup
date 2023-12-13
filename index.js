@@ -24,7 +24,8 @@ app.use(`/api`, apiRouter);
 
 // GetUsers
 apiRouter.get('/getusers', (_req, res) => {
-  res.send(post);
+  post = login(req.body);
+  res.send(DB.getUsers());
 });
 // SignUp
 apiRouter.post('/signup', (req, res) => {
@@ -36,12 +37,13 @@ apiRouter.post('/signup', (req, res) => {
 
 // GetPosts
 apiRouter.get('/getpost', (_req, res) => {
+  post = DB.getPosts(req.body);
   res.send(post);
 });
 
 // SubmitPost
 apiRouter.post('/setpost', (req, res) => {
-  post = updatePosts(req.body);
+  post = DB.updatePosts(req.body);
   res.send(true);
 });
 
@@ -55,14 +57,14 @@ app.listen(port, () => {
 });
 
 
-let postArr = [];
-function updatePosts(newPost) {
-  postArr.push(newPost);
+// let postArr = [];
+// function updatePosts(newPost) {
+//   postArr.push(newPost);
   
-  //1
+//   //1
 
-  return postArr;
-}
+//   return postArr;
+// }
 
 
 
