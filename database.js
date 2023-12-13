@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const config = require('./public/dbConfig.json');
+const config = require('./dbConfig.json');
 
 
 
