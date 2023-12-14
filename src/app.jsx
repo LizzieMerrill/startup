@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Advanced_Research } from './advanced_research/advanced_research';
 import { Beginners_Faq } from './beginners_faq/beginners_faq';
