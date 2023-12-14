@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Collection</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <center><h1 class="logo">Aquari<sup>&copy;</sup></h1></center>
+        <br>
+        <div class="header-navbar">
+            <a href="home_page.html">Home</a>
+            <a href="collection.html" class="active">My Collection</a>
+            <a href="beginners_faq.html">Tutorial</a>
+            <a href="advanced_research.html">Research</a>
+            <a href="simulator.html">Simulator</a>
+            <a href="sell.html">Sell</a>
+            <a href="community_page.html">Community</a>
+            <a href="post_view.html">Post</a>
+            <a onclick="logout()">Sign Out</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Add New Tank</h1>
+            <p>Fill in this form to add a new tank to your collection! :)</p>
+        
+            <label for="collection-tank-size-input"><b>Tank Size</b></label>
+            <input id="collection-tank-size-input" type="text" placeholder="Enter Tank Size" name="collection-tank-size-input" required>
+        
+            <label for="collection-tank-units-input"><b>Units (Gallons, Liters, etc.)</b></label>
+            <input id="collection-tank-units-input" type="text" placeholder="Enter Units of Measure" name="collection-tank-units-input" required>
+    
+            <label for="collection-tank-dimensions-input"><b>Dimensions (Optional)</b></label>
+            <input id="collection-tank-dimensions-input" type="text" placeholder="Enter Dimensions" name="collection-tank-dimensions-input">
+        
+            <label for="collection-tank-num-fish-input"><b># of Fish</b></label>
+            <input id="collection-tank-num-fish-input" type="text" placeholder="Enter Number of Fish in Tank" name="collection-tank-num-fish-input" required>
+
+            <label for="collection-tank-description-input"><b>Tank Description</b></label>
+            <input id="collection-tank-description-input" type="text" placeholder="Enter Tank Description" name="collection-tank-description-input">
+        
+            <div class="clearfix">
+              <button type="button" class="cancelbtn" onclick="location.href='home_page.html'">Cancel</button>
+              <button type="submit" class="collection-new-submit-btn" onclick="addToCollection()">Add to My Collection</button>
+            </div>
+          </div>
+    </main>
+    <footer>
+        <div class="navbar">
+            <a href="contact.html">Contact Us</a>
+            <a href="https://github.com/LizzieMerrill/startup">GitHub</a>
+            <a href="terms_and_privacy.html">Terms and Conditions</a>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

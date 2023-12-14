@@ -1,21 +1,11 @@
 {
-  "name": "public",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "vite": "^5.0.8"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cookie-parser": "^1.4.6",
-    "express": "^4.18.2",
-    "mongodb": "^6.3.0",
-    "uuid": "^9.0.1",
-    "vite": "^5.0.8",
-    "ws": "^8.15.0"
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
