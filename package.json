@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "babel-node index.jsx",
+    "start": "npx babel-node index.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
