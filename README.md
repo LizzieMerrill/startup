@@ -155,12 +155,12 @@ Data sent over WebSocket connection - done!
 
 WebSocket data displayed - All user chats display in realtime.
 ## React Deliverable
-For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
+For this deliverable I converted the application over to use React and Vite.
 
 Bundled and transpiled - done!
 
-Components - Login, voting list, vote are all components.
+Components - Every single HTML page for my site (14 of them to be exact) was converted into a react component.
 
-Router - Routing between login and voting components.
+Router - Routing between various different pages as navigation links in the header bar are clicked.
 
-Hooks - Vue uses class properties instead of UseState to track changes in vote state.
+Hooks - done!
