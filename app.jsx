@@ -1,46 +1,31 @@
 export default function App() {
     return (
-      <div className='body bg-dark text-light'>
-        <header className='container-fluid'>
-          <nav className='navbar fixed-top navbar-dark'>
-            <div className='navbar-brand'>
-              Simon<sup>&reg;</sup>
-            </div>
-            <menu className='navbar-nav'>
-              <li className='nav-item'>
-                <a className='nav-link' href='index.html'>
-                  Home
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='play.html'>
-                  Play
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='scores.html'>
-                  Scores
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='about.html'>
-                  About
-                </a>
-              </li>
-            </menu>
-          </nav>
-        </header>
+      <div>
+      <header>
+        <center><h1 className="logo">Aquari<sup>&copy;</sup></h1></center>
+        <br/>
+        <div className="header-navbar">
+            <a href="home_page.html" className="active">Home</a>
+            <a href="collection.html">My Collection</a>
+            <a href="beginners_faq.html">Tutorial</a>
+            <a href="advanced_research.html">Research</a>
+            <a href="simulator.html">Simulator</a>
+            <a href="sell.html">Sell</a>
+            <a href="community_page.html">Community</a>
+            <a href="post_view.html">Post</a>
+            <a onclick="logout()">Sign Out</a>
+        </div>
+    </header>
   
         <main>App components go here</main>
   
-        <footer className='bg-dark text-white-50'>
-          <div className='container-fluid'>
-            <span className='text-reset'>Author Name(s)</span>
-            <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
-              Source
-            </a>
-          </div>
-        </footer>
-      </div>
+        <footer>
+        <div className="navbar">
+            <a href="contact.html">Contact Us</a>
+            <a href="https://github.com/LizzieMerrill/startup">GitHub</a>
+            <a href="terms_and_privacy.html">Terms and Conditions</a>
+        </div>
+    </footer>
+        </div>
     );
   }
