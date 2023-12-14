@@ -1,6 +1,8 @@
 import React from 'react';
 
-export function Browse_Products() {
+import './style.css';
+
+export function Product_Page() {
   //LOGIN
 
 

@@ -1,6 +1,8 @@
 import React from 'react';
 
-export function Community_Page() {
+import './style.css';
+
+export function Browse_Products() {
   //LOGIN
 
 
@@ -327,19 +329,7 @@ setInterval(() => {
   }, 10000);
   return (
     <main>
-        <div className="name">
-            <fieldset id="name-controls">
-              <legend>My Name</legend>
-              <input id="my-name" type="text" />
-            </fieldset>
-          </div>
-      
-          <fieldset id="chat-controls" disabled>
-            <legend>Chat</legend>
-            <input id="new-msg" type="text" />
-            <button onclick="sendMessage()">Send</button>
-          </fieldset>
-          <div id="chat-text"></div>
+        <h1>COMING SOON!</h1>
     </main>
   );
 }

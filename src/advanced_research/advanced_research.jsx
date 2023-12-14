@@ -1,6 +1,8 @@
 import React from 'react';
 
-export function Simulator() {
+import './style.css';
+
+export function Advanced_Research() {
   //LOGIN
 
 
@@ -327,7 +329,8 @@ setInterval(() => {
   }, 10000);
   return (
     <main>
-        <h1>COMING SOON!</h1>
+        <img className="research-link" src="FBLogo_new.gif" alt="FishBase" href="https://fishbase.mnhn.fr/search.php"/>
+        <img className="research-link" src="aquariumsource.jpg" alt="AquariumSource" href="https://www.aquariumsource.com/"/>
     </main>
   );
 }

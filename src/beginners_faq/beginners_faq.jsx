@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 export function Beginners_Faq() {
   //LOGIN
 

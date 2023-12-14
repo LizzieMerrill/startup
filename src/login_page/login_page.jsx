@@ -1,120 +1,20 @@
 import React from 'react';
 
-export function Post_View() {
-  //let i = 0;//modify when doing database
-async function loadPost() {
-  const response = await fetch("/api/getpost")
-  const post = await response.json()
+import './style.css';
 
-  // Modify the DOM to display the scores
+export function Login_Page() {
+  //LOGIN
 
-  const tableBodyEl = document.querySelector('#post-table');
-
-  if (post.length) {
-    for (const [i, postStuff] of post.entries()) {
-      const positionTdEl = document.createElement('td');
-      const nameTdEl = document.createElement('td');
-      const postTdEl = document.createElement('td');
-      const dateTdEl = document.createElement('td');
-
-      positionTdEl.textContent = postStuff.number;
-      nameTdEl.textContent = postStuff.name;
-      postTdEl.textContent = postStuff.post;
-      dateTdEl.textContent = postStuff.date;
-
-      const rowEl = document.createElement('tr');
-      rowEl.appendChild(positionTdEl);
-      rowEl.appendChild(nameTdEl);
-      rowEl.appendChild(postTdEl);
-      rowEl.appendChild(dateTdEl);
-
-      tableBodyEl.appendChild(rowEl);
-    }
-  } else {
-    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to post something!</td></tr>';
-  }
-}
-
-loadPost();
-
-
-
-
-
-
-//POST PRODUCT LISTING
-async function contentPost(){
-  const postNum = document.querySelector("#post-number");
-  localStorage.setItem("postNumber", postNum.value);
-  const posterN = document.querySelector("#poster-name");
-  localStorage.setItem("posterName", posterN.value);
-  const postT = document.querySelector("#post-text");
-  localStorage.setItem("postText", postT.value);
-  const postD = document.querySelector("#post-date");
-  localStorage.setItem("postDate", postD.value);
-  
-
-  let postStuff = {
-    number: postNum.value,
-    name: posterN.value,
-    post: postT.value,
-    date: postD.value
-}
-  //if(sale listing == valid) {
-    
-    //}
-    //else{attempt failed, try again}
-    //loadPost()
-
-    try {
-      const response = await fetch('/api/setpost', {
-        method: 'POST',
-        headers: {'content-type': 'application/json'},
-        body: JSON.stringify(postStuff),
-      });
-
-      // Store what the service gave us as the high scores
-      const posts = await response.json();
-      localStorage.setItem('posts', JSON.stringify(posts));
-    } catch {
-      // If there was an error then just log it onto the console
-      console.log('We could not post your content, try again!');
-    }
-
-
-    loadPost()
-    //window.location.href = "post_view.html";
-}
-
-
-// try {
-//   const response = await fetch('/api/setpost', {
-//     method: 'POST',
-//     headers: {'content-type': 'application/json'},
-//     body: JSON.stringify(postStuff),
-//   });
-
-//   // Store what the service gave us as the high scores
-//   const posts = await response.json();
-//   localStorage.setItem('posts', JSON.stringify(posts));
-// } catch {
-//   // If there was an error then just log it onto the console
-//   console.log('We could not post your content, try again!');
-// }
 
 
 const url = "https://api.chucknorris.io/jokes/random";
 fetch(url)
-.then((x) => x.json())
-.then((response) => {
-  document.querySelector("pre").textContent = JSON.stringify(
-    response.value
-  );
-});
-
-
-//LOGIN
-
+  .then((x) => x.json())
+  .then((response) => {
+    document.querySelector("pre").textContent = JSON.stringify(
+      response.value
+    );
+  });
 
 
 
@@ -427,36 +327,17 @@ setInterval(() => {
       }
     });
   }, 10000);
-
   return (
     <main>
-      <pre>Chuck Norris Joke Generator</pre>
-        <form id="post-fields">
-            <label for="post-number">Post Number:</label><br/>
-            <input type="text" id="post-number" name="post-number" placeholder="Post number"/><br/>
-            <label for="poster-name">Name:</label><br/>
-            <input type="text" id="poster-name" name="poster-name" placeholder="Enter name"/><br/>
-            <label for="post-text">Post:</label><br/>
-            <input type="text" id="post-text" name="post-text" placeholder="Enter post"/>
-            <label for="post-date">Date:</label><br/>
-            <input type="text" id="post-date" name="post-date" placeholder="Today's date"/>
-          </form>
-          <br/><br/>
-        <button className="post-btn" onclick="contentPost()">Post</button>
-        <br/><br/><br/>
-        <div style="overflow-y:auto;">
-        <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Post</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody id="post-table"></tbody>
-          </table>
-        </div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <button type="button" onclick="location.href='create_account.html'">Sign Up</button>
+      <br/><br/><br/>
+      <h4 id="log-in-text">Already a member? Log In</h4>
+      <input type="text" id="login-username" placeholder="Enter Username" name="username" required/> 
+      <label>Password : </label> 
+      <input type="password" id="login-password" placeholder="Enter Password" name="password" required/> 
+      <button type="submit" onclick="login()">Login</button>
+      <br/><br/><br/><br/><br/><br/>
     </main>
   );
 }
