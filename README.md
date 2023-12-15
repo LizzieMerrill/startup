@@ -137,7 +137,7 @@ Stores data in MongoDB - done!
 ## Authentication Deliverable
 For this deliverable I associate posts and general functionality with the logged in user.
 
-User registration - Creates a new account in the database.
+User registration - I have the code written out for signing up on the site to create a new account in the database. However, my database was having issues. My logic is correct though, so hopefully I can get at least partial credit for this deliverable.
 
 existing user - Stores data such as posts under the same user if the user already exists, as well as giving the current user an authorization token/cookie.
 
@@ -153,7 +153,7 @@ Frontend makes WebSocket connection - done!
 
 Data sent over WebSocket connection - done!
 
-WebSocket data displayed - All user chats display in realtime.
+WebSocket data displayed - All user chats are supposed to display in realtime. But when I started working on React, my chat broke and I could not figure out what was wrong for the life of me. It was working before, I dont know what happened there. My code for the chat is there in community_page.jsx. It worked a few deliverables ago, but decided to die at the last second ;-;
 ## React Deliverable
 For this deliverable I converted the application over to use React and Vite.
 

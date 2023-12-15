@@ -2,9 +2,14 @@ import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './style.css';
-import { WebSocket } from 'ws';
+import { WebSocketServer } from 'ws';
+import { v4 as uuid } from 'uuid';
 
 export function Community_Page() {
+  
+  // Correct protocol construction
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
   //LOGIN
 
 
@@ -172,127 +177,67 @@ function addToCollection(){
 
 
 
-const { WebSocketServer } = require('ws');
-const uuid = require('uuid');
+// // const { WebSocketServer } = require('ws');
+// // const uuid = require('uuid');
 
-function peerProxy(httpServer) {
-  // Create a websocket object
-  const wss = new WebSocketServer({ noServer: true });
+// function peerProxy(httpServer) {
+//   // Create a websocket object
+//   const wss = new WebSocketServer({ noServer: true });
 
-  // Handle the protocol upgrade from HTTP to WebSocket
-  httpServer.on('upgrade', (request, socket, head) => {
-    wss.handleUpgrade(request, socket, head, function done(ws) {
-      wss.emit('connection', ws, request);
-    });
-  });
+//   // Handle the protocol upgrade from HTTP to WebSocket
+//   httpServer.on('upgrade', (request, socket, head) => {
+//     wss.handleUpgrade(request, socket, head, function done(ws) {
+//       wss.emit('connection', ws, request);
+//     });
+//   });
 
-  // Keep track of all the connections so we can forward messages
-  let connections = [];
+//   // Keep track of all the connections so we can forward messages
+//   let connections = [];
 
-  wss.on('connection', (ws) => {
-    const connection = { id: uuid.v4(), alive: true, ws: ws };
-    connections.push(connection);
+//   wss.on('connection', (ws) => {
+//     const connection = { id: uuid.v4(), alive: true, ws: ws };
+//     connections.push(connection);
 
-    // Forward messages to everyone except the sender
-    ws.on('message', function message(data) {
-      connections.forEach((c) => {
-        if (c.id !== connection.id) {
-          c.ws.send(data);
-        }
-      });
-    });
+//     // Forward messages to everyone except the sender
+//     ws.on('message', function message(data) {
+//       connections.forEach((c) => {
+//         if (c.id !== connection.id) {
+//           c.ws.send(data);
+//         }
+//       });
+//     });
 
-    // Remove the closed connection so we don't try to forward anymore
-    ws.on('close', () => {
-      connections.findIndex((o, i) => {
-        if (o.id === connection.id) {
-          connections.splice(i, 1);
-          return true;
-        }
-      });
-    });
+//     // Remove the closed connection so we don't try to forward anymore
+//     ws.on('close', () => {
+//       connections.findIndex((o, i) => {
+//         if (o.id === connection.id) {
+//           connections.splice(i, 1);
+//           return true;
+//         }
+//       });
+//     });
 
-    // Respond to pong messages by marking the connection alive
-    ws.on('pong', () => {
-      connection.alive = true;
-    });
-  });
+//     // Respond to pong messages by marking the connection alive
+//     ws.on('pong', () => {
+//       connection.alive = true;
+//     });
+//   });
 
-  // Keep active connections alive
-  setInterval(() => {
-    connections.forEach((c) => {
-      // Kill any connection that didn't respond to the ping last time
-      if (!c.alive) {
-        c.ws.terminate();
-      } else {
-        c.alive = false;
-        c.ws.ping();
-      }
-    });
-  }, 10000);
-}
+//   // Keep active connections alive
+//   setInterval(() => {
+//     connections.forEach((c) => {
+//       // Kill any connection that didn't respond to the ping last time
+//       if (!c.alive) {
+//         c.ws.terminate();
+//       } else {
+//         c.alive = false;
+//         c.ws.ping();
+//       }
+//     });
+//   }, 10000);
+// }
 
-module.exports = { peerProxy };
-
-
-function peerProxy(httpServer) {
-  // Create a websocket object
-  const wss = new WebSocketServer({ noServer: true });
-
-  // Handle the protocol upgrade from HTTP to WebSocket
-  httpServer.on('upgrade', (request, socket, head) => {
-    wss.handleUpgrade(request, socket, head, function done(ws) {
-      wss.emit('connection', ws, request);
-    });
-  });
-
-  // Keep track of all the connections so we can forward messages
-  let connections = [];
-
-  wss.on('connection', (ws) => {
-    const connection = { id: uuid.v4(), alive: true, ws: ws };
-    connections.push(connection);
-
-    // Forward messages to everyone except the sender
-    ws.on('message', function message(data) {
-      connections.forEach((c) => {
-        if (c.id !== connection.id) {
-          c.ws.send(data);
-        }
-      });
-    });
-
-    // Remove the closed connection so we don't try to forward anymore
-    ws.on('close', () => {
-      connections.findIndex((o, i) => {
-        if (o.id === connection.id) {
-          connections.splice(i, 1);
-          return true;
-        }
-      });
-    });
-
-    // Respond to pong messages by marking the connection alive
-    ws.on('pong', () => {
-      connection.alive = true;
-    });
-  });
-
-  // Keep active connections alive
-  setInterval(() => {
-    connections.forEach((c) => {
-      // Kill any connection that didn't respond to the ping last time
-      if (!c.alive) {
-        c.ws.terminate();
-      } else {
-        c.alive = false;
-        c.ws.ping();
-      }
-    });
-  }, 10000);
-}
-
-module.exports = { peerProxy };
+// module.exports = { peerProxy };
 
 
 
@@ -323,6 +268,12 @@ module.exports = { peerProxy };
 //   });
 
 // CHAT
+
+
+
+//const socket = new WebSocket('ws://aquariapp.com');
+//const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
 
 const Chat = () => {
   const [chatControlsDisabled, setChatControlsDisabled] = useState(true);
@@ -423,8 +374,7 @@ const Chat = () => {
 
 
 // Adjust the webSocket protocol to what is being used for HTTP
-const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+//const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
 // Display that we have opened the webSocket
 socket.onopen = (event) => {
@@ -524,14 +474,14 @@ setInterval(() => {
         <div className="name">
             <fieldset id="name-controls">
               <legend>My Name</legend>
-              <input id="my-name" type="text" />
+              <input id="my-name" autoComplete='off' type="text" />
             </fieldset>
           </div>
       
           <fieldset id="chat-controls" disabled>
             <legend>Chat</legend>
-            <input id="new-msg" type="text" />
-            <button onclick="sendMessage()">Send</button>
+            <input id="new-msg" autoComplete='off' type="text" />
+            <NavLink to="sendMessage()">Send</NavLink>
           </fieldset>
           <div id="chat-text"></div>
     </main>

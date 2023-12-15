@@ -74,7 +74,7 @@ apiRouter.delete('/auth/logout', (_req, res) => {
 
 // GetUser returns information about a user
 apiRouter.get('/user/:username', async (req, res) => {
-  const user = await DB.getUser(req.username);//req.params.username
+  const user = await DB.getUser(req.params.username);//req.params.username
   if (user) {
     const token = req?.cookies.token;
     res.send({ username: user.username, authenticated: token === user.token });
