@@ -6,19 +6,6 @@ export function Community_Page() {
   //LOGIN
 
 
-
-const url = "https://api.chucknorris.io/jokes/random";
-fetch(url)
-  .then((x) => x.json())
-  .then((response) => {
-    document.querySelector("pre").textContent = JSON.stringify(
-      response.value
-    );
-  });
-
-
-
-
 async function login() {
   const userN = document.querySelector("#login-username");
   localStorage.setItem("userName", userN.value);
@@ -67,10 +54,10 @@ async function login() {
 
 //LOG OUT
 function logout() {
-  if(localStorage.getItem('userName') != null){//log out if its a previously existing user
+  if(localStorage.getItem('userName')){//log out if its a previously existing user
     localStorage.removeItem('userName');
   }
-  if(localStorage.getItem('newUserName') != null){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
+  if(localStorage.getItem('newUserName')){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
     localStorage.removeItem('newUserName');
   }
   fetch(`/api/auth/logout`, {
@@ -193,28 +180,111 @@ function addToCollection(){
 
 
 
+// CHAT
 
+// const chatControls = document.querySelector('#chat-controls');
+// const myName = document.querySelector('#my-name');
+// myName.addEventListener('keyup', (e) => {
+//   chatControls.disabled = myName.value === '';
+// });
 
+// function appendMsg(cls, from, msg) {
+//     const chatText = document.querySelector('#chat-text');
+//     chatText.innerHTML = `<div><span class="${cls}">${from}</span>: ${msg}</div>` + chatText.innerHTML;
+//   }
+
+//   const input = document.querySelector('#new-msg');
+//   input.addEventListener('keydown', (e) => {
+//     if (e.key === 'Enter') {
+//       sendMessage();
+//     }
+//   });
 
 // CHAT
 
-const chatControls = document.querySelector('#chat-controls');
-const myName = document.querySelector('#my-name');
-myName.addEventListener('keyup', (e) => {
-  chatControls.disabled = myName.value === '';
-});
+const Chat = () => {
+  const [chatControlsDisabled, setChatControlsDisabled] = useState(true);
+  const [myName, setMyName] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [newMsg, setNewMsg] = useState('');
 
-function appendMsg(cls, from, msg) {
-    const chatText = document.querySelector('#chat-text');
-    chatText.innerHTML = `<div><span class="${cls}">${from}</span>: ${msg}</div>` + chatText.innerHTML;
-  }
+  const handleMyNameChange = (e) => {
+    setMyName(e.target.value);
+    setChatControlsDisabled(e.target.value === '');
+  };
 
-  const input = document.querySelector('#new-msg');
-  input.addEventListener('keydown', (e) => {
+  const appendMsg = (cls, from, msg) => {
+    setMessages((prevMessages) => [
+      {
+        id: Date.now(),
+        cls,
+        from,
+        msg,
+      },
+      ...prevMessages,
+    ]);
+  };
+
+  const handleNewMsgChange = (e) => {
+    setNewMsg(e.target.value);
+  };
+
+  const handleNewMsgKeyDown = (e) => {
     if (e.key === 'Enter') {
       sendMessage();
     }
-  });
+  };
+}
+
+  // const sendMessage = () => {
+  //   // Implement your sendMessage logic here
+  //   // For example, you can append the message to the messages state
+  //   appendMsg('user', myName, newMsg);
+  //   // Clear the input field after sending the message
+  //   setNewMsg('');
+  // };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         id="my-name"
+//         value={myName}
+//         onChange={handleMyNameChange}
+//         placeholder="Your Name"
+//       />
+//       <button id="chat-controls" disabled={chatControlsDisabled}>
+//         Send
+//       </button>
+//       <div id="chat-text">
+//         {messages.map((message) => (
+//           <div key={message.id}>
+//             <span className={message.cls}>{message.from}</span>: {message.msg}
+//           </div>
+//         ))}
+//       </div>
+//       <input
+//         type="text"
+//         id="new-msg"
+//         value={newMsg}
+//         onChange={handleNewMsgChange}
+//         onKeyDown={handleNewMsgKeyDown}
+//         placeholder="Type your message and press Enter"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Chat;
+
+
+
+
+
+
+
+
+
 
 
   function sendMessage() {

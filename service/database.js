@@ -9,7 +9,7 @@ const config = require('./dbConfig.json');
 
 
 
-//async function main() {
+async function main() {
   // Connect to the database cluster
   const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
   const client = new MongoClient(url);
@@ -294,3 +294,5 @@ async function createUser(email, username, password) {
 }
 
 module.exports = { updatePosts, getPosts, getUser, getUserByToken, createUser };
+}
+main().catch(console.error);

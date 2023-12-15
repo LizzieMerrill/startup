@@ -1,22 +1,10 @@
 import React from 'react';
-
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import './style.css';
+import { useState } from 'react';
 
 export function Create_Account() {
   //LOGIN
-
-
-
-const url = "https://api.chucknorris.io/jokes/random";
-fetch(url)
-  .then((x) => x.json())
-  .then((response) => {
-    document.querySelector("pre").textContent = JSON.stringify(
-      response.value
-    );
-  });
-
-
 
 
 async function login() {
@@ -67,10 +55,10 @@ async function login() {
 
 //LOG OUT
 function logout() {
-  if(localStorage.getItem('userName') != null){//log out if its a previously existing user
+  if(localStorage.getItem('userName')){//log out if its a previously existing user
     localStorage.removeItem('userName');
   }
-  if(localStorage.getItem('newUserName') != null){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
+  if(localStorage.getItem('newUserName')){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
     localStorage.removeItem('newUserName');
   }
   fetch(`/api/auth/logout`, {
@@ -96,7 +84,7 @@ async function signUp() {
 
 
   try {
-    const response = await fetch('/api/auth/create', {//?????????????????
+    const response = await fetch('/api/auth/create', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(newUserE, newUserN, newUserP),
@@ -182,178 +170,41 @@ function addToCollection(){
 
 
 
+const [isChecked, setIsChecked] = useState(false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// CHAT
-
-const chatControls = document.querySelector('#chat-controls');
-const myName = document.querySelector('#my-name');
-myName.addEventListener('keyup', (e) => {
-  chatControls.disabled = myName.value === '';
-});
-
-function appendMsg(cls, from, msg) {
-    const chatText = document.querySelector('#chat-text');
-    chatText.innerHTML = `<div><span class="${cls}">${from}</span>: ${msg}</div>` + chatText.innerHTML;
-  }
-
-  const input = document.querySelector('#new-msg');
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-  });
-
-
-  function sendMessage() {
-    const msgEl = document.querySelector('#new-msg');
-    const msg = msgEl.value;
-    if (!!msg) {
-      appendMsg('me', 'me', msg);
-      const name = document.querySelector('#my-name').value;
-      socket.send(`{"name":"${name}", "msg":"${msg}"}`);
-      msgEl.value = '';
-    }
-  }
-
-
-
-// Adjust the webSocket protocol to what is being used for HTTP
-const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-
-// Display that we have opened the webSocket
-socket.onopen = (event) => {
-  appendMsg('system', 'websocket', 'connected');
-};
-
-
-socket.onmessage = async (event) => {
-    const text = await event.data.text();
-    const chat = JSON.parse(text);
-    appendMsg('friend', chat.name, chat.msg);
+  const handleCheckboxChange = () => {
+    // Update the state when the checkbox is clicked
+    setIsChecked(!isChecked);
   };
 
 
-  socket.onclose = (event) => {
-    appendMsg('system', 'websocket', 'disconnected');
-    document.querySelector('#name-controls').disabled = true;
-    document.querySelector('#chat-controls').disabled = true;
-  };
-
-
-  const { WebSocketServer } = require('ws');
-const express = require('express');
-const { Db } = require('mongodb');
-const app = express();
-
-// Serve up our webSocket client HTML
-app.use(express.static('./public'));
-
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
-server = app.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
-
-
-// Create a websocket object
-const wss = new WebSocketServer({ noServer: true });
-
-// Handle the protocol upgrade from HTTP to WebSocket
-server.on('upgrade', (request, socket, head) => {
-  wss.handleUpgrade(request, socket, head, function done(ws) {
-    wss.emit('connection', ws, request);
-  });
-});
-
-
-
-
-// Keep track of all the connections so we can forward messages
-let connections = [];
-
-wss.on('connection', (ws) => {
-  const connection = { id: connections.length + 1, alive: true, ws: ws };
-  connections.push(connection);
-
-    // Respond to pong messages by marking the connection alive
-ws.on('pong', () => {
-    connection.alive = true;
-  });
-
-  // Forward messages to everyone except the sender
-  ws.on('message', function message(data) {
-    connections.forEach((c) => {
-      if (c.id !== connection.id) {
-        c.ws.send(data);
-      }
-    });
-  });
-
-  // Remove the closed connection so we don't try to forward anymore
-  ws.on('close', () => {
-    connections.findIndex((o, i) => {
-      if (o.id === connection.id) {
-        connections.splice(i, 1);
-        return true;
-      }
-    });
-  });
-});
-
-
-
-
-setInterval(() => {
-    connections.forEach((c) => {
-      // Kill any connection that didn't respond to the ping last time
-      if (!c.alive) {
-        c.ws.terminate();
-      } else {
-        c.alive = false;
-        c.ws.ping();
-      }
-    });
-  }, 10000);
   return (
     <main>
     <h1 id="sign-up-text">Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr/>
 
-    <label for="email"><b>Email</b></label>
-    <input id="signup-email" type="text" placeholder="Enter Email" name="email" required/>
+    <label htmlFor="signup-email"><b>Email</b></label>
+    <input id="signup-email" autoComplete='off' type="text" placeholder="Enter Email" name="email" required/>
 
-    <label for="signup-username"><b>Username</b></label>
+    <label htmlFor="signup-username"><b>Username</b></label>
     <input id="signup-username" type="text" placeholder="Enter Username" name="signup-username" required/>
 
-    <label for="psw"><b>Password</b></label>
+    <label htmlFor="signup-password"><b>Password</b></label>
     <input id="signup-password" type="password" placeholder="Enter Password" name="psw" required/>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <label htmlFor="signup-password-confirmation"><b>Repeat Password</b></label>
     <input id="signup-password-confirmation" type="password" placeholder="Repeat Password" name="psw-repeat" required/>
 
     <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"/> Remember me
+      <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} name="remember" style={{marginBottom: `${15}em` }}/> Remember me
     </label>
 
-    <p>By creating an account you agree to our <a href="terms_and_privacy.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <p>By creating an account you agree to our </p><NavLink to="terms_and_privacy" style={{color: `dodgerblue` }}>Terms and Conditions.</NavLink>
 
     <div className="clearfix">
-      <button type="button" className="cancelbtn" onclick="location.href='index.html'">Cancel</button>
-      <button type="submit" className="signupbtn" onclick="signUp()">Sign Up</button>
+      <NavLink to="login_page">Cancel</NavLink>
+      <NavLink to="signUp()">Sign Up</NavLink>
     </div>
     </main>
   );

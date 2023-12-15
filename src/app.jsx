@@ -17,59 +17,59 @@ import { Simulator } from './simulator/simulator';
 import { Terms_And_Privacy } from './terms_and_privacy/terms_and_privacy';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <div></div>//sub elements in here
-  </BrowserRouter>
-);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <BrowserRouter>
+//     <div></div>//sub elements in here
+//   </BrowserRouter>
+// );
 
 
 export default function App() {
     return (
-      <div>
-      <header>
-        <center><h1 className="logo">Aquari<sup>&copy;</sup></h1></center>
-        <br/>
-        <div className="header-navbar">
-            <NavLink to="home_page" className="active">Home</NavLink>
-            <NavLink to="collection">My Collection</NavLink>
-            <NavLink to="beginners_faq">Tutorial</NavLink>
-            <NavLink to="advanced_research">Research</NavLink>
-            <NavLink to="simulator">Simulator</NavLink>
-            <NavLink to="sell">Sell</NavLink>
-            <NavLink to="community_page">Community</NavLink>
-            <NavLink to="post_view">Post</NavLink>
-            <NavLink to="logout()">Sign Out</NavLink>
-        </div>
-    </header>
-  
-    <Routes>
-        <Route path='/' element={<Login_Page />} exact />
-        <Route path='/advanced_research' element={<Advanced_Research />} />
-        <Route path='/beginners_faq' element={<Beginners_Faq />} />
-        <Route path='/browse_products.html' element={<Browse_Products />} />
-        <Route path='/collection' element={<Collection />} />
-        <Route path='/community_page' element={<Community_Page />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/create_account' element={<Create_Account />} />
-        <Route path='/home_page' element={<Home_Page />} />
-        <Route path='/post_view' element={<Post_View />} />
-        <Route path='/product_page' element={<Product_Page />} />
-        <Route path='/sell' element={<Sell />} />
-        <Route path='/simulator' element={<Simulator />} />
-        <Route path='/terms_and_privacy' element={<Terms_And_Privacy />} />
-        <Route path='*' element={<NotFound />} />
-    </Routes>
-  
-        <footer>
-        <div className="navbar">
-            <NavLink to="contact">Contact Us</NavLink>
-            <NavLink to="https://github.com/LizzieMerrill/startup">GitHub</NavLink>
-            <NavLink to="terms_and_privacy">Terms and Conditions</NavLink>
-        </div>
-    </footer>
-        </div>
+        <BrowserRouter><div>
+        <header>
+          <center><h1 className="logo">Aquari<sup>&copy;</sup></h1></center>
+          <br/>
+          <div className="header-navbar">
+              <NavLink to="home_page" className="active">Home</NavLink>
+              <NavLink to="collection">My Collection</NavLink>
+              <NavLink to="beginners_faq">Tutorial</NavLink>
+              <NavLink to="advanced_research">Research</NavLink>
+              <NavLink to="simulator">Simulator</NavLink>
+              <NavLink to="sell">Sell</NavLink>
+              <NavLink to="community_page">Community</NavLink>
+              <NavLink to="post_view">Post</NavLink>
+              <NavLink to="logout()">Sign Out</NavLink>
+          </div>
+      </header>
+    
+      <Routes>
+          <Route path='/' element={<Login_Page />} exact />
+          <Route path='/advanced_research' element={<Advanced_Research />} />
+          <Route path='/beginners_faq' element={<Beginners_Faq />} />
+          <Route path='/browse_products.html' element={<Browse_Products />} />
+          <Route path='/collection' element={<Collection />} />
+          <Route path='/community_page' element={<Community_Page />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/create_account' element={<Create_Account />} />
+          <Route path='/home_page' element={<Home_Page />} />
+          <Route path='/post_view' element={<Post_View />} />
+          <Route path='/product_page' element={<Product_Page />} />
+          <Route path='/sell' element={<Sell />} />
+          <Route path='/simulator' element={<Simulator />} />
+          <Route path='/terms_and_privacy' element={<Terms_And_Privacy />} />
+          <Route path='*' element={<NotFound />} />
+      </Routes>
+    
+          <footer>
+          <div className="navbar">
+              <NavLink to="contact">Contact Us</NavLink>
+              <NavLink to="https://github.com/LizzieMerrill/startup">GitHub</NavLink>
+              <NavLink to="terms_and_privacy">Terms and Conditions</NavLink>
+          </div>
+      </footer>
+          </div></BrowserRouter>
     );
   }
   function NotFound() {

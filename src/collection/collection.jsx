@@ -6,19 +6,6 @@ export function Collection() {
   //LOGIN
 
 
-
-const url = "https://api.chucknorris.io/jokes/random";
-fetch(url)
-  .then((x) => x.json())
-  .then((response) => {
-    document.querySelector("pre").textContent = JSON.stringify(
-      response.value
-    );
-  });
-
-
-
-
 async function login() {
   const userN = document.querySelector("#login-username");
   localStorage.setItem("userName", userN.value);
@@ -67,10 +54,10 @@ async function login() {
 
 //LOG OUT
 function logout() {
-  if(localStorage.getItem('userName') != null){//log out if its a previously existing user
+  if(localStorage.getItem('userName')){//log out if its a previously existing user
     localStorage.removeItem('userName');
   }
-  if(localStorage.getItem('newUserName') != null){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
+  if(localStorage.getItem('newUserName')){//if it's their first time signing in because they're a brand new user, doing this cuz variable names are different between login and signup functions
     localStorage.removeItem('newUserName');
   }
   fetch(`/api/auth/logout`, {
@@ -181,171 +168,25 @@ function addToCollection(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// CHAT
-
-const chatControls = document.querySelector('#chat-controls');
-const myName = document.querySelector('#my-name');
-myName.addEventListener('keyup', (e) => {
-  chatControls.disabled = myName.value === '';
-});
-
-function appendMsg(cls, from, msg) {
-    const chatText = document.querySelector('#chat-text');
-    chatText.innerHTML = `<div><span class="${cls}">${from}</span>: ${msg}</div>` + chatText.innerHTML;
-  }
-
-  const input = document.querySelector('#new-msg');
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-  });
-
-
-  function sendMessage() {
-    const msgEl = document.querySelector('#new-msg');
-    const msg = msgEl.value;
-    if (!!msg) {
-      appendMsg('me', 'me', msg);
-      const name = document.querySelector('#my-name').value;
-      socket.send(`{"name":"${name}", "msg":"${msg}"}`);
-      msgEl.value = '';
-    }
-  }
-
-
-
-// Adjust the webSocket protocol to what is being used for HTTP
-const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-
-// Display that we have opened the webSocket
-socket.onopen = (event) => {
-  appendMsg('system', 'websocket', 'connected');
-};
-
-
-socket.onmessage = async (event) => {
-    const text = await event.data.text();
-    const chat = JSON.parse(text);
-    appendMsg('friend', chat.name, chat.msg);
-  };
-
-
-  socket.onclose = (event) => {
-    appendMsg('system', 'websocket', 'disconnected');
-    document.querySelector('#name-controls').disabled = true;
-    document.querySelector('#chat-controls').disabled = true;
-  };
-
-
-  const { WebSocketServer } = require('ws');
-const express = require('express');
-const { Db } = require('mongodb');
-const app = express();
-
-// Serve up our webSocket client HTML
-app.use(express.static('./public'));
-
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
-server = app.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
-
-
-// Create a websocket object
-const wss = new WebSocketServer({ noServer: true });
-
-// Handle the protocol upgrade from HTTP to WebSocket
-server.on('upgrade', (request, socket, head) => {
-  wss.handleUpgrade(request, socket, head, function done(ws) {
-    wss.emit('connection', ws, request);
-  });
-});
-
-
-
-
-// Keep track of all the connections so we can forward messages
-let connections = [];
-
-wss.on('connection', (ws) => {
-  const connection = { id: connections.length + 1, alive: true, ws: ws };
-  connections.push(connection);
-
-    // Respond to pong messages by marking the connection alive
-ws.on('pong', () => {
-    connection.alive = true;
-  });
-
-  // Forward messages to everyone except the sender
-  ws.on('message', function message(data) {
-    connections.forEach((c) => {
-      if (c.id !== connection.id) {
-        c.ws.send(data);
-      }
-    });
-  });
-
-  // Remove the closed connection so we don't try to forward anymore
-  ws.on('close', () => {
-    connections.findIndex((o, i) => {
-      if (o.id === connection.id) {
-        connections.splice(i, 1);
-        return true;
-      }
-    });
-  });
-});
-
-
-
-
-setInterval(() => {
-    connections.forEach((c) => {
-      // Kill any connection that didn't respond to the ping last time
-      if (!c.alive) {
-        c.ws.terminate();
-      } else {
-        c.alive = false;
-        c.ws.ping();
-      }
-    });
-  }, 10000);
   return (
     <main>
         <div className="container">
             <h1>Add New Tank</h1>
             <p>Fill in this form to add a new tank to your collection! :)</p>
         
-            <label for="collection-tank-size-input"><b>Tank Size</b></label>
+            <label htmlFor="collection-tank-size-input"><b>Tank Size</b></label>
             <input id="collection-tank-size-input" type="text" placeholder="Enter Tank Size" name="collection-tank-size-input" required/>
         
-            <label for="collection-tank-units-input"><b>Units (Gallons, Liters, etc.)</b></label>
+            <label htmlFor="collection-tank-units-input"><b>Units (Gallons, Liters, etc.)</b></label>
             <input id="collection-tank-units-input" type="text" placeholder="Enter Units of Measure" name="collection-tank-units-input" required/>
     
-            <label for="collection-tank-dimensions-input"><b>Dimensions (Optional)</b></label>
+            <label htmlFor="collection-tank-dimensions-input"><b>Dimensions (Optional)</b></label>
             <input id="collection-tank-dimensions-input" type="text" placeholder="Enter Dimensions" name="collection-tank-dimensions-input"/>
         
-            <label for="collection-tank-num-fish-input"><b># of Fish</b></label>
+            <label htmlFor="collection-tank-num-fish-input"><b># of Fish</b></label>
             <input id="collection-tank-num-fish-input" type="text" placeholder="Enter Number of Fish in Tank" name="collection-tank-num-fish-input" required/>
 
-            <label for="collection-tank-description-input"><b>Tank Description</b></label>
+            <label htmlFor="collection-tank-description-input"><b>Tank Description</b></label>
             <input id="collection-tank-description-input" type="text" placeholder="Enter Tank Description" name="collection-tank-description-input"/>
         
             <div className="clearfix">
