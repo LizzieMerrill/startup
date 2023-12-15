@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import './style.css';
 
 export function Collection() {
@@ -190,8 +191,8 @@ function addToCollection(){
             <input id="collection-tank-description-input" type="text" placeholder="Enter Tank Description" name="collection-tank-description-input"/>
         
             <div className="clearfix">
-              <button type="button" className="cancelbtn" onclick="location.href='home_page.html'">Cancel</button>
-              <button type="submit" className="collection-new-submit-btn" onclick="addToCollection()">Add to My Collection</button>
+            <NavLink to="home_page">Cancel</NavLink>
+            <NavLink to="addToCollection()">Add To My Collection</NavLink>
             </div>
         </div>
     </main>

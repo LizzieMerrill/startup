@@ -1,8 +1,18 @@
 import React from 'react';
-
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import './style.css';
 
 export function Sell() {
+  
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    // Update the state when the checkbox is clicked
+    setIsChecked(!isChecked);
+  };
+  
+  
   //LOGIN
 
 
@@ -179,307 +189,307 @@ function addToCollection(){
         <div className="product-category">
             <h2>Live Aquatics</h2>
             <br/>
-            <input type="checkbox" id="Freshwater" name="Freshwater" value="Freshwater"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Freshwater" name="Freshwater" value="Freshwater"/>
             <label htmlFor="Freshwater"> Freshwater</label><br/>
             <br/>
-            <input type="checkbox" id="Saltwater" name="Saltwater" value="Saltwater"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Saltwater" name="Saltwater" value="Saltwater"/>
             <label htmlFor="Saltwater"> Saltwater</label><br/>
             <br/>
-            <input type="checkbox" id="Invertebrates" name="Invertebrates" value="Invertebrates"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Invertebrates" name="Invertebrates" value="Invertebrates"/>
             <label htmlFor="Invertebrates"> Invertebrates</label><br/>
             <br/>
-            <input type="checkbox" id="Other-Vertebrates" name="Other-Vertebrates" value="Other-Vertebrates"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Other-Vertebrates" name="Other-Vertebrates" value="Other-Vertebrates"/>
             <label htmlFor="Other-Vertebrates"> Other Vertebrates</label><br/>
             <br/>
-            <input type="checkbox" id="Plants" name="Plants" value="Plants"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Plants" name="Plants" value="Plants"/>
             <label htmlFor="Plants"> Plants</label><br/>
             <br/>
-            <input type="checkbox" id="Coral" name="Coral" value="Coral"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Coral" name="Coral" value="Coral"/>
             <label htmlFor="Coral"> Coral</label><br/>
             <br/>
-            <input type="checkbox" id="Live-Rock" name="Live-Rock" value="Live-Rock"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Live-Rock" name="Live-Rock" value="Live-Rock"/>
             <label htmlFor="Live-Rock"> Live Rock</label><br/>
             <br/>
-            <input type="checkbox" id="Driftwood" name="Driftwood" value="Driftwood"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Driftwood" name="Driftwood" value="Driftwood"/>
             <label htmlFor="Driftwood"> Driftwood</label><br/>
         </div>
         <div className="product-category">
             <h2>Tanks</h2>
             <br/>
-            <input type="checkbox" id="Glass" name="Glass" value="Glass"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Glass" name="Glass" value="Glass"/>
             <label htmlFor="Glass"> Glass</label><br/>
             <br/>
-            <input type="checkbox" id="Acrylic" name="Acrylic" value="Acrylic"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Acrylic" name="Acrylic" value="Acrylic"/>
             <label htmlFor="Acrylic"> Acrylic</label><br/>
             <br/>
-            <input type="checkbox" id="Long" name="Long" value="Long"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Long" name="Long" value="Long"/>
             <label htmlFor="Long"> Long</label><br/>
             <br/>
-            <input type="checkbox" id="High" name="High" value="High"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="High" name="High" value="High"/>
             <label htmlFor="High"> High</label><br/>
             <br/>
-            <input type="checkbox" id="Breeder" name="Breeder" value="Breeder"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Breeder" name="Breeder" value="Breeder"/>
             <label htmlFor="Breeder"> Breeder</label><br/>
             <br/>
-            <input type="checkbox" id="Hexagon" name="Hexagon" value="Hexagon"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Hexagon" name="Hexagon" value="Hexagon"/>
             <label htmlFor="Hexagon"> Hexagon</label><br/>
             <br/>
-            <input type="checkbox" id="Other-Size" name="Other-Size" value="Other-Size"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Other-Size" name="Other-Size" value="Other-Size"/>
             <label htmlFor="Other-Size"> Other Size</label><br/>
             <br/>
-            <input type="checkbox" id="1-Gallon" name="1-Gallon" value="1-Gallon"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="1-Gallon" name="1-Gallon" value="1-Gallon"/>
             <label htmlFor="1-Gallon"> 1 Gallon</label><br/>
             <br/>
-            <input type="checkbox" id="2.5-Gallons" name="2.5-Gallons" value="2.5-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="2.5-Gallons" name="2.5-Gallons" value="2.5-Gallons"/>
             <label htmlFor="2.5-Gallons"> 2.5 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="3-Gallons" name="3-Gallons" value="3-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="3-Gallons" name="3-Gallons" value="3-Gallons"/>
             <label htmlFor="3-Gallons"> 3 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="5-Gallons" name="5-Gallons" value="5-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="5-Gallons" name="5-Gallons" value="5-Gallons"/>
             <label htmlFor="5-Gallons"> 5 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="5.5-Gallons" name="5.5-Gallons" value="5.5-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="5.5-Gallons" name="5.5-Gallons" value="5.5-Gallons"/>
             <label htmlFor="5.5-Gallons"> 5.5 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="10-Gallons" name="10-Gallons" value="10-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="10-Gallons" name="10-Gallons" value="10-Gallons"/>
             <label htmlFor="10-Gallons"> 10 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="14-Gallons" name="14-Gallons" value="14-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="14-Gallons" name="14-Gallons" value="14-Gallons"/>
             <label htmlFor="14-Gallons"> 14 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="15-Gallons" name="15-Gallons" value="15-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="15-Gallons" name="15-Gallons" value="15-Gallons"/>
             <label htmlFor="15-Gallons"> 15 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="20-Gallons" name="20-Gallons" value="20-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="20-Gallons" name="20-Gallons" value="20-Gallons"/>
             <label htmlFor="20-Gallons"> 20 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="25-Gallons" name="25-Gallons" value="25-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="25-Gallons" name="25-Gallons" value="25-Gallons"/>
             <label htmlFor="25-Gallons"> 25 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="29-Gallons" name="29-Gallons" value="29-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="29-Gallons" name="29-Gallons" value="29-Gallons"/>
             <label htmlFor="29-Gallons"> 29 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="30-Gallons" name="30-Gallons" value="30-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="30-Gallons" name="30-Gallons" value="30-Gallons"/>
             <label htmlFor="30-Gallons"> 30 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="35-Gallons" name="35-Gallons" value="35-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="35-Gallons" name="35-Gallons" value="35-Gallons"/>
             <label htmlFor="35-Gallons"> 35 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="37-Gallons" name="37-Gallons" value="37-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="37-Gallons" name="37-Gallons" value="37-Gallons"/>
             <label htmlFor="37-Gallons"> 37 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="40-Gallons" name="40-Gallons" value="40-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="40-Gallons" name="40-Gallons" value="40-Gallons"/>
             <label htmlFor="40-Gallons"> 40 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="45-Gallons" name="45-Gallons" value="45-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="45-Gallons" name="45-Gallons" value="45-Gallons"/>
             <label htmlFor="45-Gallons"> 45 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="50-Gallons" name="50-Gallons" value="50-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="50-Gallons" name="50-Gallons" value="50-Gallons"/>
             <label htmlFor="50-Gallons"> 50 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="55-Gallons" name="55-Gallons" value="55-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="55-Gallons" name="55-Gallons" value="55-Gallons"/>
             <label htmlFor="55-Gallons"> 55 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="60-Gallons" name="60-Gallons" value="60-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="60-Gallons" name="60-Gallons" value="60-Gallons"/>
             <label htmlFor="60-Gallons"> 60 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="65-Gallons" name="65-Gallons" value="65-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="65-Gallons" name="65-Gallons" value="65-Gallons"/>
             <label htmlFor="65-Gallons"> 65 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="75-Gallons" name="75-Gallons" value="75-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="75-Gallons" name="75-Gallons" value="75-Gallons"/>
             <label htmlFor="75-Gallons"> 75 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="90-Gallons" name="90-Gallons" value="90-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="90-Gallons" name="90-Gallons" value="90-Gallons"/>
             <label htmlFor="90-Gallons"> 90 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="110-Gallons" name="110-Gallons" value="110-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="110-Gallons" name="110-Gallons" value="110-Gallons"/>
             <label htmlFor="110-Gallons"> 110 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="120-Gallons" name="120-Gallons" value="120-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="120-Gallons" name="120-Gallons" value="120-Gallons"/>
             <label htmlFor="120-Gallons"> 120 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="125-Gallons" name="125-Gallons" value="125-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="125-Gallons" name="125-Gallons" value="125-Gallons"/>
             <label htmlFor="125-Gallons"> 125 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="150-Gallons" name="150-Gallons" value="150-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="150-Gallons" name="150-Gallons" value="150-Gallons"/>
             <label htmlFor="150-Gallons"> 150 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="180-Gallons" name="180-Gallons" value="180-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="180-Gallons" name="180-Gallons" value="180-Gallons"/>
             <label htmlFor="180-Gallons"> 180 Gallons</label><br/>
             <br/>
-            <input type="checkbox" id="225-Gallons" name="225-Gallons" value="225-Gallons"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="225-Gallons" name="225-Gallons" value="225-Gallons"/>
             <label htmlFor="225-Gallons"> 225 Gallons</label><br/>
             <br/>
         </div>
         <div className="product-category">
             <h2>Equipment</h2>
             <br/>
-            <input type="checkbox" id="Aquarium-Kits" name="Aquarium-Kits" value="Aquarium-Kits"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Aquarium-Kits" name="Aquarium-Kits" value="Aquarium-Kits"/>
             <label htmlFor="Aquarium-Kits"> Aquarium Kits</label><br/>
             <br/>
-            <input type="checkbox" id="Stands" name="Stands" value="Stands"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Stands" name="Stands" value="Stands"/>
             <label htmlFor="Stands"> Stands</label><br/>
             <br/>
-            <input type="checkbox" id="Food" name="Food" value="Food"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Food" name="Food" value="Food"/>
             <label htmlFor="Food"> Food</label><br/>
             <br/>
-            <input type="checkbox" id="Filters" name="Filters" value="Filters"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Filters" name="Filters" value="Filters"/>
             <label htmlFor="Filters"> Filters</label><br/>
             <br/>
-            <input type="checkbox" id="Filter-Refills" name="Filter-Refills" value="Filter-Refills"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Filter-Refills" name="Filter-Refills" value="Filter-Refills"/>
             <label htmlFor="Filter-Refills"> Filter Refills</label><br/>
             <br/>
-            <input type="checkbox" id="Heaters" name="Heaters" value="Heaters"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Heaters" name="Heaters" value="Heaters"/>
             <label htmlFor="Heaters"> Heaters</label><br/>
             <br/>
-            <input type="checkbox" id="Lids" name="Lids" value="Lids"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Lids" name="Lids" value="Lids"/>
             <label htmlFor="Lids"> Lids</label><br/>
             <br/>
-            <input type="checkbox" id="Lights" name="Lights" value="Lights"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Lights" name="Lights" value="Lights"/>
             <label htmlFor="Lights"> Lights</label><br/>
             <br/>
-            <input type="checkbox" id="Thermometers" name="Thermometers" value="Thermometers"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Thermometers" name="Thermometers" value="Thermometers"/>
             <label htmlFor="Thermometers"> Thermometers</label><br/>
             <br/>
-            <input type="checkbox" id="Air-Pumps" name="Air-Pumps" value="Air-Pumps"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Air-Pumps" name="Air-Pumps" value="Air-Pumps"/>
             <label htmlFor="Air-Pumps"> Air Pumps</label><br/>
             <br/>
-            <input type="checkbox" id="Air-Stones" name="Air-Stones" value="Air-Stones"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Air-Stones" name="Air-Stones" value="Air-Stones"/>
             <label htmlFor="Air-Stones"> Air Stones</label><br/>
             <br/>
-            <input type="checkbox" id="Tubing" name="Tubing" value="Tubing"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Tubing" name="Tubing" value="Tubing"/>
             <label htmlFor="Tubing"> Tubing</label><br/>
             <br/>
-            <input type="checkbox" id="Dividers" name="Dividers" value="Dividers"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Dividers" name="Dividers" value="Dividers"/>
             <label htmlFor="Dividers"> Dividers</label><br/>
             <br/>
-            <input type="checkbox" id="Gravel-Vacuums" name="Gravel-Vacuums" value="Gravel-Vacuums"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Gravel-Vacuums" name="Gravel-Vacuums" value="Gravel-Vacuums"/>
             <label htmlFor="Gravel-Vacuums"> Gravel Vacuums</label><br/>
             <br/>
-            <input type="checkbox" id="Buckets" name="Buckets" value="Buckets"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Buckets" name="Buckets" value="Buckets"/>
             <label htmlFor="Buckets"> Buckets</label><br/>
             <br/>
-            <input type="checkbox" id="Nets" name="Nets" value="Nets"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Nets" name="Nets" value="Nets"/>
             <label htmlFor="Nets"> Nets</label><br/>
             <br/>
-            <input type="checkbox" id="Spare-Parts" name="Spare-Parts" value="Spare-Parts"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Spare-Parts" name="Spare-Parts" value="Spare-Parts"/>
             <label htmlFor="Spare-Parts"> Spare Parts</label><br/>
             <br/>
         </div>
         <div className="product-category">
             <h2>Aquascaping</h2>
             <br/>
-            <input type="checkbox" id="Decor" name="Decor" value="Decor"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Decor" name="Decor" value="Decor"/>
             <label htmlFor="Decor"> Decor</label><br/>
             <br/>
-            <input type="checkbox" id="Rock-Substrate" name="Rock-Substrate" value="Rock-Substrate"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Rock-Substrate" name="Rock-Substrate" value="Rock-Substrate"/>
             <label htmlFor="Rock-Substrate"> Rock Substrate</label><br/>
             <br/>
-            <input type="checkbox" id="Sand-Substrate" name="Sand-Substrate" value="Sand-Substrate"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Sand-Substrate" name="Sand-Substrate" value="Sand-Substrate"/>
             <label htmlFor="Sand-Substrate"> Sand Substrate</label><br/>
             <br/>
-            <input type="checkbox" id="Dirted-Substrate" name="Dirted-Substrate" value="Dirted-Substrate"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Dirted-Substrate" name="Dirted-Substrate" value="Dirted-Substrate"/>
             <label htmlFor="Dirted-Substrate"> Dirted Substrate</label><br/>
             <br/>
-            <input type="checkbox" id="Fake-Substrate" name="Fake-Substrate" value="Fake-Substrate"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Fake-Substrate" name="Fake-Substrate" value="Fake-Substrate"/>
             <label htmlFor="Fake-Substrate"> Fake Substrate</label><br/>
             <br/>
         </div>
         <div className="product-category">
             <h2>Chemicals</h2>
             <br/>
-            <input type="checkbox" id="Water-Testing" name="Water-Testing" value="Water-Testing"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Water-Testing" name="Water-Testing" value="Water-Testing"/>
             <label htmlFor="Water-Testing"> Water Testing</label><br/>
             <br/>
-            <input type="checkbox" id="Sealant" name="Sealant" value="Sealant"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Sealant" name="Sealant" value="Sealant"/>
             <label htmlFor="Sealant"> Sealant</label><br/>
             <br/>
-            <input type="checkbox" id="Water-Conditioner" name="Water-Conditioner" value="Water-Conditioner"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Water-Conditioner" name="Water-Conditioner" value="Water-Conditioner"/>
             <label htmlFor="Water-Conditioner"> Water Conditioner</label><br/>
             <br/>
-            <input type="checkbox" id="Medicine" name="Medicine" value="Medicine"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Medicine" name="Medicine" value="Medicine"/>
             <label htmlFor="Medicine"> Medicine</label><br/>
             <br/>
-            <input type="checkbox" id="Plant-Nutrients" name="Plant-Nutrients" value="Plant-Nutrients"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Plant-Nutrients" name="Plant-Nutrients" value="Plant-Nutrients"/>
             <label htmlFor="Plant-Nutrients"> Plant Nutrients</label><br/>
             <br/>
-            <input type="checkbox" id="Other-Chemicals" name="Other-Chemicals" value="Other-Chemicals"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Other-Chemicals" name="Other-Chemicals" value="Other-Chemicals"/>
             <label htmlFor="Other-Chemicals"> Other Chemicals</label><br/>
             <br/>
         </div>
         <div className="product-category">
             <h2>Brand</h2>
             <br/>
-            <input type="checkbox" id="Seachem" name="Seachem" value="Seachem"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Seachem" name="Seachem" value="Seachem"/>
             <label htmlFor="Seachem"> Seachem</label><br/>
             <br/>
-            <input type="checkbox" id="Fluval" name="Fluval" value="Fluval"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Fluval" name="Fluval" value="Fluval"/>
             <label htmlFor="Fluval"> Fluval</label><br/>
             <br/>
-            <input type="checkbox" id="API" name="API" value="API"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="API" name="API" value="API"/>
             <label htmlFor="API"> API</label><br/>
             <br/>
-            <input type="checkbox" id="Aqueon" name="Aqueon" value="Aqueon"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Aqueon" name="Aqueon" value="Aqueon"/>
             <label htmlFor="Aqueon"> Aqueon</label><br/>
             <br/>
-            <input type="checkbox" id="Top-Fin" name="Top-Fin" value="Top-Fin"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Top-Fin" name="Top-Fin" value="Top-Fin"/>
             <label htmlFor="Top-Fin"> Top Fin</label><br/>
             <br/>
-            <input type="checkbox" id="Imagitarium" name="Imagitarium" value="Imagitarium"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Imagitarium" name="Imagitarium" value="Imagitarium"/>
             <label htmlFor="Imagitarium"> Imagitarium</label><br/>
             <br/>
-            <input type="checkbox" id="Marineland" name="Marineland" value="Marineland"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Marineland" name="Marineland" value="Marineland"/>
             <label htmlFor="Marineland"> Marineland</label><br/>
             <br/>
-            <input type="checkbox" id="AquaClear" name="AquaClear" value="AquaClear"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="AquaClear" name="AquaClear" value="AquaClear"/>
             <label htmlFor="AquaClear"> AquaClear</label><br/>
             <br/>
-            <input type="checkbox" id="Omega-One" name="Omega-One" value="Omega-One"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Omega-One" name="Omega-One" value="Omega-One"/>
             <label htmlFor="Omega-One"> Omega One</label><br/>
             <br/>
-            <input type="checkbox" id="San-Francisco-Bay-Brand" name="San-Francisco-Bay-Brand" value="San-Francisco-Bay-Brand"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="San-Francisco-Bay-Brand" name="San-Francisco-Bay-Brand" value="San-Francisco-Bay-Brand"/>
             <label htmlFor="San-Francisco-Bay-Brand"> San Francisco Bay Brand</label><br/>
             <br/>
-            <input type="checkbox" id="Tetra" name="Tetra" value="Tetra"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Tetra" name="Tetra" value="Tetra"/>
             <label htmlFor="Tetra"> Tetra</label><br/>
             <br/>
         </div>
         <div className="product-category">
             <h2>Live Species</h2>
             <br/>
-            <input type="checkbox" id="Joe" name="Joe" value="Joe"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Joe" name="Joe" value="Joe"/>
             <label htmlFor="Joe"> Joe</label><br/>
             <br/>
-            <input type="checkbox" id="Mama" name="Mama" value="Mama"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Mama" name="Mama" value="Mama"/>
             <label htmlFor="Mama"> Mama</label><br/>
             <br/>
         </div>
         <div className="product-category">
             <h2>Condition</h2>
             <br/>
-            <input type="checkbox" id="New" name="New" value="New"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="New" name="New" value="New"/>
             <label htmlFor="New"> New</label><br/>
             <br/>
-            <input type="checkbox" id="Used-Like-New" name="Used-Like-New" value="Used-Like-New"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Used-Like-New" name="Used-Like-New" value="Used-Like-New"/>
             <label htmlFor="Used-Like-New"> Used - Like New</label><br/>
             <br/>
-            <input type="checkbox" id="Used-Very-Good" name="Used-Very-Good" value="Used-Very-Good"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Used-Very-Good" name="Used-Very-Good" value="Used-Very-Good"/>
             <label htmlFor="Used-Very-Good"> Used - Very Good</label><br/>
             <br/>
-            <input type="checkbox" id="Used-Good" name="Used-Good" value="Used-Good"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Used-Good" name="Used-Good" value="Used-Good"/>
             <label htmlFor="Used-Good"> Used - Good</label><br/>
             <br/>
-            <input type="checkbox" id="Used-Fair" name="Used-Fair" value="Used-Fair"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Used-Fair" name="Used-Fair" value="Used-Fair"/>
             <label htmlFor="Used-Fair"> Used - Fair</label><br/>
             <br/>
-            <input type="checkbox" id="Used-Bad" name="Used-Bad" value="Used-Bad"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Used-Bad" name="Used-Bad" value="Used-Bad"/>
             <label htmlFor="Used-Bad"> Used - Bad</label><br/>
             <br/>
-            <input type="checkbox" id="Used-Broken" name="Used-Broken" value="Used-Broken"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Used-Broken" name="Used-Broken" value="Used-Broken"/>
             <label htmlFor="Used-Broken"> Used - Broken</label><br/>
             <br/>
-            <input type="checkbox" id="Refurbished" name="Refurbished" value="Refurbished"/>
+            <input type="checkbox" autoComplete='off' checked={isChecked} onChange={handleCheckboxChange} id="Refurbished" name="Refurbished" value="Refurbished"/>
             <label htmlFor="Refurbished"> Refurbished</label><br/>
             <br/>
         </div>
@@ -503,11 +513,11 @@ function addToCollection(){
             <label htmlFor="sale-dimensions"><b>Dimensions (Optional)</b></label>
             <input id="sale-dimensions" type="text" placeholder="Enter Product Dimensions" name="sale-dimensions"/>
         
-            <p>By listing and selling this product you agree to our <a href="terms_and_privacy.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+            <p>By listing and selling this product you agree to our </p><NavLink to="terms_and_privacy" style={{color: `dodgerblue` }}>Terms and Conditions.</NavLink>
         
             <div className="clearfix">
-              <button type="button" className="cancelbtn" onclick="location.href='home_page.html'">Cancel</button>
-              <button type="submit" className="salebtn" onclick="sell()">Post Listing</button>
+            <NavLink to="home_page">Cancel</NavLink>
+              <NavLink to="sell()">Post Listing</NavLink>
             </div>
           </div>
     </main>

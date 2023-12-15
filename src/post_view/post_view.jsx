@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import './style.css';
 
 export function Post_View() {
@@ -272,7 +272,6 @@ function addToCollection(){
 
   return (
     <main>
-      <pre>Chuck Norris Joke Generator</pre>
         <form id="post-fields">
             <label htmlFor="post-number">Post Number:</label><br/>
             <input type="text" id="post-number" name="post-number" placeholder="Post number"/><br/>
@@ -284,9 +283,9 @@ function addToCollection(){
             <input type="text" id="post-date" name="post-date" placeholder="Today's date"/>
           </form>
           <br/><br/>
-        <button className="post-btn" onclick="contentPost()">Post</button>
+          <NavLink to="contentPost()">Post</NavLink>
         <br/><br/><br/>
-        <div style="overflow-y:auto;">
+        <div style={{ overflowY: 'auto' }}>
         <table>
             <thead>
               <tr>

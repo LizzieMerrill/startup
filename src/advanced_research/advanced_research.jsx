@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import './style.css';
 
 export function Advanced_Research() {
@@ -165,12 +166,14 @@ function addToCollection(){
     //add tank to collection through database, and display collection list
     //}
     //else{attempt failed, try again}
+    // <img className="research-link" src="FBLogo_new.gif" alt="FishBase" href="https://fishbase.mnhn.fr/search.php"/>
+        // <img className="research-link" src="aquariumsource.jpg" alt="AquariumSource" href="https://www.aquariumsource.com/"/>
 }
 
   return (
     <main>
-        <img className="research-link" src="FBLogo_new.gif" alt="FishBase" href="https://fishbase.mnhn.fr/search.php"/>
-        <img className="research-link" src="aquariumsource.jpg" alt="AquariumSource" href="https://www.aquariumsource.com/"/>
+        <NavLink className="research-link" src="FBLogo_new.gif" alt="FishBase" to="https://fishbase.mnhn.fr/search.php">FishBase</NavLink>
+        <NavLink className="research-link" src="aquariumsource.jpg" alt="AquariumSource" to="https://www.aquariumsource.com/">AquariumSource</NavLink>
     </main>
   );
 }
