@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { About } from './about/about';
 import { Advanced_Research } from './advanced_research/advanced_research';
 import { Beginners_Faq } from './beginners_faq/beginners_faq';
 import { Browse_Products } from './browse_products/browse_products';
@@ -46,6 +47,7 @@ export default function App() {
     
       <Routes>
           <Route path='/' element={<Login_Page />} exact />
+          <Route path='/about' element={<About />} />
           <Route path='/advanced_research' element={<Advanced_Research />} />
           <Route path='/beginners_faq' element={<Beginners_Faq />} />
           <Route path='/browse_products.html' element={<Browse_Products />} />
@@ -64,6 +66,7 @@ export default function App() {
     
           <footer>
           <div className="navbar">
+              <NavLink to="about">About</NavLink>
               <NavLink to="contact">Contact Us</NavLink>
               <NavLink to="https://github.com/LizzieMerrill/startup">GitHub</NavLink>
               <NavLink to="terms_and_privacy">Terms and Conditions</NavLink>

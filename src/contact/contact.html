@@ -19,9 +19,25 @@
         <br><br><br>
         <p>Creator: Elizabeth Merrill</p>
         <p>Email: aquari.customerservice@gmail.com</p>
+        <br><br><br><br><br><br><br><br><br>
+        <h2>Submit Your Contact Information Below:</h2>
+        <form action="/submit-contact-info" method="post">
+            <label for="full-name">Full Name:</label><br>
+            <input type="text" id="full-name" name="full-name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <small>Format: 123-456-7890</small><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
     </main>
     <footer>
         <div class="navbar">
+            <a href="about.html">About</a>
             <a href="contact.html" class="active">Contact Us</a>
             <a href="https://github.com/LizzieMerrill/startup">GitHub</a>
             <a href="terms_and_privacy.html">Terms and Conditions</a>
