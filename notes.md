@@ -103,6 +103,10 @@ OR
 
 ssh -i ~/downloads/yellow56.pem ubuntu@54.174.64.86
 
+Deploy Command:
+
+./deployReact.sh -k ~/Downloads/yellow56.pem -h aquariapp.com -s startup
+
 
 
 ### First
