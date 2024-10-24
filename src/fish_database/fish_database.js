@@ -1,4 +1,4 @@
-const fishDatabase = [
+const fish_database = [
     {
         name: "angelfish",
         requirements: {
