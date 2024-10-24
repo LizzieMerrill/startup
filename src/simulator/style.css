@@ -3,6 +3,9 @@
 .sim-pic{
   max-height: 100px;
 }
+.compatibility-result{
+  text-align:right;
+}
 body{
   min-height: 100vh;
   display: flex;

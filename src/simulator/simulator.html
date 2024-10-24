@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -108,7 +109,9 @@
             </div>
         </div>
         <!-- end of fish pics -->
-        <button type="button" class="btn btn-primary" onClick="checkCompatibility">Check Compatibility</button>
+        <button type="button" class="btn btn-primary" onClick="checkCompatibility()">Check Compatibility</button>
+        <!-- Compatibility result display -->
+        <div id="compatibility-result" class="compatibility-result"> </div>
     </main>
     <footer>
         <div class="navbar">
@@ -118,6 +121,8 @@
             <a href="terms_and_privacy.html">Terms and Conditions</a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
-<script src="simulator.jsx"></script>
+<script src="script.js"></script>
+<!-- <script src="simulator.jsx"></script> -->
 </html>
