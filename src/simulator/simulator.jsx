@@ -5,6 +5,10 @@ import './style.css';
 export function Simulator() {
   //LOGIN
 
+//DETERMINES FISH COMPATIBILITY 
+ function compatibility(){
+
+ }
 
 async function login() {
   const userN = document.querySelector("#login-username");

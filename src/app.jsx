@@ -32,14 +32,14 @@ export default function App() {
           <center><h1 className="logo">Aquari<sup>&copy;</sup></h1></center>
           <br/>
           <div className="header-navbar">
-              <NavLink to="home_page" className="active">Home</NavLink>
-              <NavLink to="collection">My Collection</NavLink>
-              <NavLink to="beginners_faq">Tutorial</NavLink>
-              <NavLink to="advanced_research">Research</NavLink>
-              <NavLink to="simulator">Simulator</NavLink>
-              <NavLink to="sell">Sell</NavLink>
-              <NavLink to="community_page">Community</NavLink>
-              <NavLink to="post_view">Post</NavLink>
+              <NavLink to="./home_page/home_page" className="active">Home</NavLink>
+              <NavLink to="./collection/collection">My Collection</NavLink>
+              <NavLink to="./beginners_faq/beginners_faq">Tutorial</NavLink>
+              <NavLink to="./advanced_research/advanced_research">Research</NavLink>
+              <NavLink to="./simulator/simulator">Simulator</NavLink>
+              <NavLink to="./sell/sell">Sell</NavLink>
+              <NavLink to="./community_page/community_page">Community</NavLink>
+              <NavLink to="./post_view/post_view">Post</NavLink>
               <NavLink to="logout()">Sign Out</NavLink>
           </div>
       </header>

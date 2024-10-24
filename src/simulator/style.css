@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+.sim-pic{
+  max-height: 100px;
+}
 body{
   min-height: 100vh;
   display: flex;
