@@ -9,7 +9,7 @@ import { Collection } from './collection/collection';
 import { Community_Page } from './community_page/community_page';
 import { Contact } from './contact/contact';
 import { Create_Account } from './create_account/create_account';
-import { Home_Page } from './home_page/home_page';
+import { Search_Page } from './search_page/search_page';
 import { Login_Page } from './login_page/login_page';
 import { Post_View } from './post_view/post_view';
 import { Product_Page } from './product_page/product_page';
@@ -33,7 +33,7 @@ export default function App() {
           <center><h1 className="logo">Aquari<sup>&copy;</sup></h1></center>
           <br/>
           <div className="header-navbar">
-              <NavLink to="home_page" className="active">Home</NavLink>
+              <NavLink to="search_page" className="active">Home</NavLink>
               <NavLink to="collection">My Collection</NavLink>
               <NavLink to="beginners_faq">Tutorial</NavLink>
               <NavLink to="advanced_research">Research</NavLink>
@@ -55,7 +55,7 @@ export default function App() {
           <Route path='/community_page' element={<Community_Page />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/create_account' element={<Create_Account />} />
-          <Route path='/home_page' element={<Home_Page />} />
+          <Route path='/search_page' element={<Search_Page />} />
           <Route path='/post_view' element={<Post_View />} />
           <Route path='/product_page' element={<Product_Page />} />
           <Route path='/sell' element={<Sell />} />
