@@ -31,7 +31,7 @@ function compatibility(fishOneName, fishTwoName) {
         {
             name: "angelfish",
             requirements: {
-              waterType: "saltwater",
+              waterType: "freshwater",
               temperature: "warm",
               mood: "aggressive",
               bettaException: false,
@@ -94,7 +94,7 @@ function compatibility(fishOneName, fishTwoName) {
           {
             name: "honey-gourami",
             requirements: {
-              waterType: "saltwater",
+              waterType: "freshwater",
               temperature: "warm",
               mood: "peaceful",
               bettaException: false,
