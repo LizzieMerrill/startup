@@ -31,7 +31,7 @@ async function login() {
     localStorage.setItem('users', JSON.stringify(users));
 
     if (response.ok) {
-      window.location.href = 'home_page.html';
+      window.location.href = 'search_page.html';
     } else {
       const body = await response.json();
       const modalEl = document.querySelector('#msgModal');
@@ -47,7 +47,7 @@ async function login() {
 
   // //if(insert authentication logic == valid) {
   //   if(send){
-  //     window.location.href = "home_page.html";
+  //     window.location.href = "search_page.html";
   //   }
   // //}
   // //else{attempt failed, try again}
@@ -101,7 +101,7 @@ async function signUp() {
     localStorage.setItem('users', JSON.stringify(users));
 
     if (response.ok) {
-      window.location.href = 'home_page.html';
+      window.location.href = 'search_page.html';
     } else {
       const body = await response.json();
       const modalEl = document.querySelector('#msgModal');
@@ -122,7 +122,7 @@ async function signUp() {
   //   //return false and tell user to try again due to password mismatch (USE WEBSOCKET TO CHECK IN REALTIME WHETHER PASSWORDS MATCH??)
   // }
   // //if(insert authentication logic == valid) {
-  // window.location.href = "home_page.html";
+  // window.location.href = "search_page.html";
   //}
   //else{attempt failed, try again}
 //}

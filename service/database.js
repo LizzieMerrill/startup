@@ -41,7 +41,7 @@ const config = require('./dbConfig.json');
 //   localStorage.setItem("userPass", userP.value);
 //   //if(insert authentication logic == valid) {
 //     if(db.usernames.find({userName:{$exists:true}})){
-//       window.location.href = "home_page.html";
+//       window.location.href = "search_page.html";
 //     }
 //   //}
 //   //else{attempt failed, try again}
@@ -66,7 +66,7 @@ const config = require('./dbConfig.json');
 //   //   //return false and tell user to try again due to password mismatch (USE WEBSOCKET TO CHECK IN REALTIME WHETHER PASSWORDS MATCH??)
 //   // }
 //   // //if(insert authentication logic == valid) {
-//   // window.location.href = "home_page.html";
+//   // window.location.href = "search_page.html";
 //   //}
 //   //else{attempt failed, try again}
 // //}
